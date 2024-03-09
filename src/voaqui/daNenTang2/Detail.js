@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     marginStart: 20,
   },
   btn_postion: {
-    width: '20%',
+    width: 80,
     padding: 5,
     alignItems: 'center',
     borderRadius: 24,

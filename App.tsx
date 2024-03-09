@@ -32,22 +32,22 @@ import Detail from './src/voaqui/daNenTang2/Detail';
 import AuthenStackNavigation from './src/voaqui/daNenTang2/authen/AuthenStackNavigation';
 function App(): React.JSX.Element {
   return (
+    // <AppProvider>
+    //   <SafeAreaView style={styles.container}>
+    //     <StatusBar />
+    //     <AppNavigation />
+    //   </SafeAreaView>
+    // </AppProvider>
     <AppProvider>
-      <SafeAreaView style={styles.container}>
-        <StatusBar />
-        <AppNavigation />
-      </SafeAreaView>
-    </AppProvider>
-  //   <AppProvider>
-  //   <SafeAreaView style={styles.container}>
-  //     <StatusBar />
-  //     {/* <AppNavigation /> */}
-  //     {/* <HomePage/> */}
-  //    {/* <Register/> */}
-  //    <AuthenStackNavigation/>
-  //    {/* <Detail/> */}
-  //   </SafeAreaView>
-  // </AppProvider>
+    <SafeAreaView style={styles.container}>
+      <StatusBar />
+      {/* <AppNavigation /> */}
+      {/* <HomePage/> */}
+     {/* <Register/> */}
+     <AuthenStackNavigation/>
+     {/* <Detail/> */}
+    </SafeAreaView>
+  </AppProvider>
     
   );
 }
