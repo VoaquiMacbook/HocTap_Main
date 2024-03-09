@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="productsContainer"></div>
+  <script>
+    async function displayProducts() {
+      const response = await fetch("https://fakestoreapi.com/products?limit=10 ");
+      const products = await response.json();
+
+      const productsContainer = document.getElementById('productsContainer');
+
+      products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+
+        const title = document.createElement('h2');
+        title.textContent = product.title;
+
+        const image = document.createElement('img');
+        image.src = product.image;
+        image.alt = product.title;
+
+        const price = document.createElement('p');
+        price.textContent = `Price: $${product.price}`;
+
+        const description = document.createElement('p');
+        description.textContent = product.description;
+
+        productDiv.appendChild(title);
+        productDiv.appendChild(image);
+        productDiv.appendChild(price);
+        productDiv.appendChild(description);
+
+        productsContainer.appendChild(productDiv);
+      });
+    }
+
+    displayProducts();
+
+  </script>
+
+</body>
+
+</html>

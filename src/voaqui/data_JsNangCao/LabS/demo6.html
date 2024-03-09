@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const gameEvent = new Map([
+    [10,'Ghi bàn'],
+    [25,'Thẻ vàng'],
+    [40,'Thẻ đỏ'],
+    [60,'Ghi bàn'],
+    [30,'Ghi bàn'],
+    [55,'Thẻ vàng'],
+    [80,'Thẻ đỏ'],
+    [89,'Thay người'],
+    [92,'Ghi bàn']
+]);
+
+// Tạo một mảng chứa thời gian ghi bàn
+const goalTimes = [...gameEvent.keys()].filter(time => gameEvent.get(time) === 'Ghi bàn');
+
+// Tính toán thời gian giữa các lần ghi bàn
+const timeBetweenGoals = [];
+for (let i = 0; i < goalTimes.length - 1; i++) {
+    const timeDifference = goalTimes[i + 1] - goalTimes[i];
+    timeBetweenGoals.push(timeDifference);
+}
+
+// Tính trung bình thời gian giữa các lần ghi bàn
+const averageTimeBetweenGoals = timeBetweenGoals.reduce((acc, cur) => acc + cur, 0) / timeBetweenGoals.length;
+
+console.log("Thời gian giữa các lần ghi bàn:", timeBetweenGoals);
+console.log("Thời gian trung bình giữa các lần ghi bàn:", averageTimeBetweenGoals);
+
+    </script>
+</body>
+</html>

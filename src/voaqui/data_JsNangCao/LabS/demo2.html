@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thanh toán</title>
+  <style>
+    #message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #37383d;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <button id="paymentButton">Thanh toán</button>
+  <div id="message"></div>
+
+  <script>
+    const paymentButton = document.getElementById('paymentButton');
+    const message = document.getElementById('message');
+
+    // Xử lý sự kiện click vào nút "Thanh toán"
+    paymentButton.addEventListener('click', function() {
+      // Hiển thị thông báo
+      message.style.display = 'block';
+      message.textContent = 'Bạn đã thanh toán thành công';
+
+      // Đặt màu nền và kích thước cho thông báo
+      message.style.backgroundColor = '#37383d';
+      message.style.width = '50%';
+    });
+
+    // Xử lý sự kiện click vào thông báo để ẩn đi
+    message.addEventListener('click', function() {
+      message.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

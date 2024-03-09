@@ -1,0 +1,13 @@
+current directory: /Volumes/hoc_tap/DuAnShopping/DuAnShopping/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/bin/ruby -I /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0 -r ./siteconf20240115-74585-ajacbv.rb extconf.rb
+creating Makefile
+
+current directory: /Volumes/hoc_tap/DuAnShopping/DuAnShopping/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+make "DESTDIR=" clean
+
+current directory: /Volumes/hoc_tap/DuAnShopping/DuAnShopping/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+make "DESTDIR="
+make: Nothing to be done for `all'.
+
+current directory: /Volumes/hoc_tap/DuAnShopping/DuAnShopping/vendor/bundle/ruby/2.6.0/gems/json-2.7.1/ext/json
+make "DESTDIR=" install
