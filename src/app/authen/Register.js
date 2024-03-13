@@ -40,7 +40,8 @@ const Register = (props) => {
 
       } catch (error) {
         console.log('Đăng ký lỗi' + error);
-        Alert.alert('Đăng ký lỗi' + error);
+        // Alert.alert('Đăng ký lỗi' + error);
+        Alert.alert('Đăng ký thất bại')
       }
     }
   };
