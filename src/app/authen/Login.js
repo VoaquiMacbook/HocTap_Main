@@ -88,6 +88,9 @@ const Login = (props) => {
             style={styles.bgContainer}
             source={require('../../../assets/images/backgroud.png')}>
             <View style={styles.container}>
+            <TouchableOpacity style={styles.btn_back} >
+                <Image style={{width:32,height:32}} source={require('../../../assets/images/btn_back.png')}></Image>
+            </TouchableOpacity>
                 <View style={styles.welcomeContainer}>
                     <Text style={styles.welcome}>Chào mừng bạn</Text>
                 </View>
@@ -154,25 +157,19 @@ const Login = (props) => {
                         <Text style={styles.buttonText}>Đăng nhập</Text>
                     </LinearGradient>
                 </TouchableOpacity>
-
-                {/* <TouchableOpacity
-                    style={[styles.buttonContainerLoginGG, { marginTop: 9 }]}
-                    onPress={null} >
-                    <Image
-                        source={require('../../../assets/images/ic_google.png')}
-                        style={styles.imgButtonGG} />
-
-                    <Text style={styles.buttonTextGG}>Sign in with Google</Text>
-                </TouchableOpacity> */}
                 <View style={[styles.horizontal, {marginTop:15}]}>
                     <Text style={styles.line}></Text>
                     <Text style={styles.txt_line}>Hoặc</Text>
                     <Text style={styles.line}></Text>
                 </View>
+                <View style={[styles.horizontal, {marginTop:20}]}>
+                <Image style={styles.ic_gg} source={require('../../../assets/images/ic_gg.png')}></Image>
+                <Image style={{width:32,height:32}} source={require('../../../assets/images/ic_fb.png')}></Image>
+                </View>
                 <View style={styles.registerContainer}>
                     <Text style={styles.register}>Bạn không có tài khoảng </Text>
                     <TouchableOpacity onPress={register}>
-                        <Text style={styles.registerText}>  Tạo tài khoản</Text>
+                        <Text style={styles.registerText}> Tạo tài khoản</Text>
                     </TouchableOpacity>
                 </View>
                 
@@ -185,6 +182,21 @@ const Login = (props) => {
 export default Login;
 
 const styles = StyleSheet.create({
+    ic_gg:{
+        width:32,
+        height:32,
+        marginEnd:30,
+    },
+    btn_back:{
+        position:'absolute', 
+        left:10,
+        top:20,
+        elevation: 2,
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 5,
+        shadowRadius: 10,
+        shadowColor: '9px 9px 9px #F4AAB9',
+    },
     txt_line:{
         marginStart:5,
         marginEnd:5,
@@ -222,6 +234,7 @@ const styles = StyleSheet.create({
         paddingEnd:14,
         paddingStart:14,
         paddingTop:10,
+        position:'relative',
     },
     forgotPasswordText: {
         color: '#009245',
@@ -251,28 +264,28 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     registerText: {
-        color: '#D17842',
-        fontSize: 14,
+        color: '#009245',
+        fontSize: 12,
         textAlign: 'center',
         fontFamily: 'Poppins',
-        fontWeight: '700',
-        lineHeight: 26,
+        fontWeight: '400',
+        lineHeight: 18,
         letterSpacing: 0.50,
         justifyContent: 'center',
     },
     register: {
         width: 'auto',
         color: '#828282',
-        fontSize: 14,
+        fontSize: 12,
         textAlign: 'center',
         fontFamily: 'Poppins',
-        fontWeight: '700',
-        lineHeight: 26,
+        fontWeight: '400',
+        lineHeight: 18,
         letterSpacing: 0.50,
         justifyContent: 'center',
     },
     registerContainer: {
-        width: 'auto',
+        width: '100%',
         height: 'auto',
         marginTop: 31,
         display: 'flex',
