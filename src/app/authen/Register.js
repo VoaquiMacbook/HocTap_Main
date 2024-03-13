@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import AxiosInstance from '../helper/AxiosInstance';
 import LinearGradient from 'react-native-linear-gradient';
@@ -46,6 +46,7 @@ const Register = (props) => {
   };
 
   return (
+    <ScrollView>
     <ImageBackground
       style={styles.bgContainer}
       source={require('../../../assets/images/bg_register.png')}>
@@ -91,8 +92,8 @@ const Register = (props) => {
             autoCapitalize="none"
             autoCorrect={false}
             keyboardType='numeric'
-            value={email}
-            onChangeText={setEmail}
+            // value={email}
+            // onChangeText={setEmail}
           />
         </View>
 
@@ -176,13 +177,14 @@ const Register = (props) => {
           {/* <TouchableOpacity onPress={navigation.goBack}>
           <Text style={styles.signInText}>Sign in</Text>
         </TouchableOpacity> */}
-          <TouchableOpacity>
+          <TouchableOpacity onPress={navigation.goBack}>
             <Text style={styles.signInText}> Đăng nhập</Text>
           </TouchableOpacity>
 
         </View>
       </View >
     </ImageBackground>
+    </ScrollView>
   )
 }
 
@@ -215,7 +217,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   loginContainer: {
-    marginTop: 15,
+    marginTop: '1%',
   },
   btn_back: {
     position: 'absolute',
@@ -330,7 +332,8 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   welcomeContainer: {
-    marginTop: 80,
+    // marginTop: 80,
+    marginTop:'40%',
   },
   welcome: {
     color: 'black',

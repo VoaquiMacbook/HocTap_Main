@@ -36,12 +36,12 @@ function App(): React.JSX.Element {
     <AppProvider>
       <SafeAreaView style={styles.container}>
         <StatusBar/>
-        {/* <AppNavigation /> */}
+        <AppNavigation />
         {/* <Login/> */}
         {/* <Bai1/> */}
         {/* <Bai2/> */}
         {/* <HeaderCustuom/> */}
-       <Register/>
+       {/* <Register/> */}
       </SafeAreaView>
     </AppProvider>
 

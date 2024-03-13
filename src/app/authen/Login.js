@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground, ScrollView } from 'react-native'
 import React, { useState, useContext } from 'react'
 import { AppContext } from '../main/AppContext';
 import AxiosInstance from '../helper/AxiosInstance';
@@ -84,6 +84,8 @@ const Login = (props) => {
 
 
     return (
+        <ScrollView
+        showsVerticalScrollIndicator={false}>
         <ImageBackground
             style={styles.bgContainer}
             source={require('../../../assets/images/backgroud.png')}>
@@ -180,6 +182,7 @@ const Login = (props) => {
 
             </View >
         </ImageBackground>
+        </ScrollView>
     )
 }
 
@@ -231,14 +234,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     bgContainer: {
-        flex: 2,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         // padding: 14,
         paddingEnd:14,
         paddingStart:14,
         paddingTop:10,
-        position:'relative',
+        // position:'relative',
     },
     forgotPasswordText: {
         color: '#009245',
@@ -389,7 +392,7 @@ const styles = StyleSheet.create({
         letterSpacing: 0.5,
     },
     welcomeContainer: {
-        marginTop: 230,
+        marginTop: 270,
     },
     welcome: {
         color: 'black',
@@ -405,7 +408,7 @@ const styles = StyleSheet.create({
     },
     container: {
         width: '100%',
-        height: '100%',
+        height: 'auto',
         alignItems: 'center',
         justifyContent: 'center',
         padding: 14,
