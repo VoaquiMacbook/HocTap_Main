@@ -163,8 +163,12 @@ const Login = (props) => {
                     <Text style={styles.line}></Text>
                 </View>
                 <View style={[styles.horizontal, {marginTop:20}]}>
-                <Image style={styles.ic_gg} source={require('../../../assets/images/ic_gg.png')}></Image>
-                <Image style={{width:32,height:32}} source={require('../../../assets/images/ic_fb.png')}></Image>
+                    <TouchableOpacity>
+                    <Image style={styles.ic_gg} source={require('../../../assets/images/ic_gg.png')}></Image>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                    <Image style={{width:32,height:32}} source={require('../../../assets/images/ic_fb.png')}></Image>
+                    </TouchableOpacity>
                 </View>
                 <View style={styles.registerContainer}>
                     <Text style={styles.register}>Bạn không có tài khoảng </Text>
@@ -402,8 +406,6 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        // backgroundColor: '#0c0f14',
-
         alignItems: 'center',
         justifyContent: 'center',
         padding: 14,

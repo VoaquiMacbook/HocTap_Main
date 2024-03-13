@@ -25,11 +25,8 @@ import C6 from './src/voaqui/data_JsNangCao/Thi/C6';
 import C7 from './src/voaqui/data_JsNangCao/Thi/C7';
 import C8 from './src/voaqui/data_JsNangCao/Thi/C8';
 // react 2
-import HomePage from './src/voaqui/daNenTang2/HomePage';
-import Register from './src/voaqui/daNenTang2/Test_React2';
 import Login from './src/app/authen/Login';
-import Detail from './src/voaqui/daNenTang2/Detail';
-import AuthenStackNavigation from './src/voaqui/daNenTang2/authen/AuthenStackNavigation';
+import Register from './src/app/authen/Register';
 // layDiemCong
 import Bai1 from './src/voaqui/layDiemCong/Bai1';
 import Bai2 from './src/voaqui/layDiemCong/Bai2';
@@ -40,10 +37,11 @@ function App(): React.JSX.Element {
       <SafeAreaView style={styles.container}>
         <StatusBar/>
         {/* <AppNavigation /> */}
-        <Login/>
+        {/* <Login/> */}
         {/* <Bai1/> */}
         {/* <Bai2/> */}
         {/* <HeaderCustuom/> */}
+       <Register/>
       </SafeAreaView>
     </AppProvider>
 
