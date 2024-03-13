@@ -30,12 +30,20 @@ import Register from './src/voaqui/daNenTang2/Test_React2';
 import Login from './src/app/authen/Login';
 import Detail from './src/voaqui/daNenTang2/Detail';
 import AuthenStackNavigation from './src/voaqui/daNenTang2/authen/AuthenStackNavigation';
+// layDiemCong
+import Bai1 from './src/voaqui/layDiemCong/Bai1';
+import Bai2 from './src/voaqui/layDiemCong/Bai2';
+import HeaderCustuom from './src/voaqui/layDiemCong/HeaderCustuom';
 function App(): React.JSX.Element {
   return (
     <AppProvider>
       <SafeAreaView style={styles.container}>
-        <StatusBar />
-        <AppNavigation />
+        <StatusBar/>
+        {/* <AppNavigation /> */}
+        <Login/>
+        {/* <Bai1/> */}
+        {/* <Bai2/> */}
+        {/* <HeaderCustuom/> */}
       </SafeAreaView>
     </AppProvider>
 
