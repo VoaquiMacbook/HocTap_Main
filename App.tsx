@@ -27,6 +27,7 @@ import C8 from './src/voaqui/data_JsNangCao/Thi/C8';
 // react 2
 import Login from './src/app/authen/Login';
 import Register from './src/app/authen/Register';
+import Home from './src/app/main/tabs/Home';
 // layDiemCong
 import Bai1 from './src/voaqui/layDiemCong/Bai1';
 import Bai2 from './src/voaqui/layDiemCong/Bai2';
@@ -36,12 +37,13 @@ function App(): React.JSX.Element {
     <AppProvider>
       <SafeAreaView style={styles.container}>
         <StatusBar/>
-        <AppNavigation />
+        {/* <AppNavigation /> */}
         {/* <Login/> */}
         {/* <Bai1/> */}
         {/* <Bai2/> */}
         {/* <HeaderCustuom/> */}
        {/* <Register/> */}
+       <Home/>
       </SafeAreaView>
     </AppProvider>
 

@@ -31,24 +31,17 @@ const ItemProduct = (props) => {
     // const product = route.params?.data?.product;
     return (
 
-        <View style={[styles.Container, { backgroundColor: '#000' }]}>
+        <View style={[styles.Container, styles.bg_container]}>
             <TouchableOpacity onPress={() => { navigation.navigate('Detail', { data: { product } }) }}>
-                <LinearGradient
-                    colors={['#252A32', 'rgba(38, 43, 51, 0)']}
-                    style={styles.linearGradient}>
-                    <View style={styles.top}>
+                {/* <LinearGradient
+                    // colors={['#252A32', 'rgba(38, 43, 51, 0)']}
+                    style={styles.linearGradient}> */}
+                    <View style={[styles.top]}>
                         <View>
                             <Image
-                                style={{ borderRadius: 20, marginBottom: 10, width: 126, height: 126 }}
+                                style={{ borderRadius: 20, marginBottom: 10, width: 155, height: 134 }}
                                 source={{ uri: `${product.image}` }} />
                         </View>
-
-                        <Image
-                            style={{ position: 'absolute', right: 0, borderTopRightRadius: 20 }}
-                            source={require('../../../assets/images/sale.png')} />
-                        <Image
-                            style={{ position: 'absolute', right: 31, top: 5 }}
-                            source={require('../../../assets/images/star.png')} />
                         <Text style={{ position: 'absolute', top: 2, right: 5, color: 'white', fontWeight: 'bold', fontSize: 11, right: 11 }}>
                             {product.rating.toFixed(1)}
                         </Text>
@@ -57,18 +50,16 @@ const ItemProduct = (props) => {
                         <Text style={styles.name} numberOfLines={1}>{product?.name}</Text>
                         <Text style={styles.info}>{product?.info}</Text>
                         <View style={styles.priceContainer}>
-
                             <Text style={styles.price}>
-                                <Text style={{ color: '#D17842' }}>$ </Text>
                                 {product?.price}
                             </Text>
 
-                            <TouchableOpacity style={styles.btnAdd} onPress={() => addToCart(product)}>
+                            {/* <TouchableOpacity style={styles.btnAdd} onPress={() => addToCart(product)}>
                                 <Image source={require('../../../assets/images/btn_add.png')} />
-                            </TouchableOpacity>
+                            </TouchableOpacity> */}
                         </View>
                     </View>
-                </LinearGradient>
+                {/* </LinearGradient> */}
             </TouchableOpacity>
         </View>
     );
@@ -77,11 +68,19 @@ const ItemProduct = (props) => {
 export default ItemProduct;
 
 const styles = StyleSheet.create({
+    bg_container:{
+        elevation: 2,
+        shadowOffset: { width: 2, height: 2 },
+        shadowOpacity: 0.1,
+        shadowRadius: 10,
+        backgroundColor:'white',
+        marginBottom:10
+    },
     btnAdd: {
 
     },
     price: {
-        color: '#fff',
+        color: '#007537',
         fontFamily: 'Poppins',
         fontSize: 15,
         fontWeight: '600',
@@ -95,6 +94,7 @@ const styles = StyleSheet.create({
         marginTop: 6.3,
         justifyContent: 'space-between',
         paddingEnd: 12,
+        paddingBottom:10,
     },
     info: {
         color: '#fff',
@@ -105,9 +105,9 @@ const styles = StyleSheet.create({
         lineHeight: 20,
     },
     name: {
-        color: '#fff',
-        fontFamily: 'Poppins',
-        fontSize: 13,
+        color: '#000',
+        fontFamily: 'Lato',
+        fontSize: 14,
         fontWeight: '400',
         fontStyle: 'normal',
         lineHeight: 20,
@@ -152,10 +152,12 @@ const styles = StyleSheet.create({
         borderRadius: 16,
     },
     Container: {
-        width: 149,
-        height: 245,
-        marginEnd: 22,
-        borderRadius: 23,
+        width: 160,
+        height: 'auto',
+        marginEnd: 10,
+        borderRadius: 10,
+        marginTop:10,
+        marginStart:12,
         // display: 'flex',
         // flexDirection: 'column',
         // justifyContent: 'center',
@@ -164,6 +166,6 @@ const styles = StyleSheet.create({
     top: {
         position: 'relative',
         alignItems: 'center',
-        margin: 12,
+        // margin: 12,
     },
 });
