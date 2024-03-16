@@ -32,6 +32,8 @@ import Home from './src/app/main/tabs/Home';
 import Bai1 from './src/voaqui/layDiemCong/Bai1';
 import Bai2 from './src/voaqui/layDiemCong/Bai2';
 import HeaderCustuom from './src/voaqui/layDiemCong/HeaderCustuom';
+import Animation from './src/voaqui/layDiemCong/Animation/Animation';
+import Animation_6 from './src/voaqui/layDiemCong/Animation/Animation_6';
 function App(): React.JSX.Element {
   return (
     <AppProvider>
@@ -43,7 +45,8 @@ function App(): React.JSX.Element {
         {/* <Bai2/> */}
         {/* <HeaderCustuom/> */}
        {/* <Register/> */}
-       <Home/>
+       {/* <Home/> */}
+       <Animation_6/>
       </SafeAreaView>
     </AppProvider>
 

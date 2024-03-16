@@ -39,12 +39,14 @@ const ItemProduct = (props) => {
                     <View style={[styles.top]}>
                         <View>
                             <Image
-                                style={{ borderRadius: 20, marginBottom: 10, width: 155, height: 134 }}
-                                source={{ uri: `${product.image}` }} />
+                                style={{ borderRadius: 10, marginBottom: 10, width: 155, height: 134, backgroundColor:'gray'}}
+                                // source={{ uri: `${product.image}` }} 
+                                
+                                />
                         </View>
-                        <Text style={{ position: 'absolute', top: 2, right: 5, color: 'white', fontWeight: 'bold', fontSize: 11, right: 11 }}>
+                        {/* <Text style={{ position: 'absolute', top: 2, right: 5, color: 'white', fontWeight: 'bold', fontSize: 11, right: 11 }}>
                             {product.rating.toFixed(1)}
-                        </Text>
+                        </Text> */}
                     </View>
                     <View style={styles.bottom}>
                         <Text style={styles.name} numberOfLines={1}>{product?.name}</Text>
@@ -157,7 +159,7 @@ const styles = StyleSheet.create({
         marginEnd: 10,
         borderRadius: 10,
         marginTop:10,
-        marginStart:12,
+        marginStart:10,
         // display: 'flex',
         // flexDirection: 'column',
         // justifyContent: 'center',

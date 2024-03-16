@@ -178,7 +178,7 @@ const Register = (props) => {
           {/* <TouchableOpacity onPress={navigation.goBack}>
           <Text style={styles.signInText}>Sign in</Text>
         </TouchableOpacity> */}
-          <TouchableOpacity onPress={navigation.goBack}>
+          <TouchableOpacity>
             <Text style={styles.signInText}> Đăng nhập</Text>
           </TouchableOpacity>
 

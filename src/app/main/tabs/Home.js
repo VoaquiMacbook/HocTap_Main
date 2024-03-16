@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, TouchableOpacity, Image, StatusBar, TextInput, 
 import React, { useState, useEffect, useCallback, useContext } from 'react'
 import AxiosInstance from '../../helper/AxiosInstance'
 import ItemProduct from '../../item/ItemProduct'
+import ItemCombo from '../../item/ItemCombo'
 import { AppContext } from '../AppContext'
 import HeaderCustuom from '../../custom/HeaderCustuom'
 const Home = (props) => {
@@ -68,6 +69,24 @@ const Home = (props) => {
     // console.log(item?._id);
     // setProducts(item.products);
   }
+
+  // item combo new
+  const renderItem = ({ item }) => (
+    <View style={styles.item}>
+        <View >
+            <Image
+                style={styles.avt_container}
+                source={{ uri: item.photo }}/>
+        </View>
+        <View style={styles.txt_container_item}>
+            <Text style={styles.txt_itemM} >{item.name}</Text>
+            <Text style={styles.txt_item}>{item.postion}</Text>
+        </View>
+
+        <Text style={styles.txt_itemM}>{item.rice}</Text>
+
+    </View>
+);
 
   return (
     <View style={styles.Container}>
@@ -172,11 +191,23 @@ const Home = (props) => {
           />
         </View>
 
-        
-        
-
-        <Text style={styles.textCoffeeBean}>Coffee beans</Text>
-
+        <View style={styles.textHeader}>
+          <Text style={styles.txtHeader}>Combo chăm sóc (mới)</Text>
+        </View>
+        <View style={styles.listCoffee}>
+          <FlatList
+            data={products.slice(0, 3)}
+            horizontal={false}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item }) => (
+              <ItemCombo
+                navigation={navigation}
+                product={item}
+              />
+            )}
+            keyExtractor={(item, index) => index.toString()}
+          />
+        </View>
       </ScrollView>
     </View>
   )
@@ -273,7 +304,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     width: '100%',
     height: '100%',
-    paddingHorizontal: 30,
+    paddingHorizontal: '2%',
     paddingVertical: 20,
   }
 })
