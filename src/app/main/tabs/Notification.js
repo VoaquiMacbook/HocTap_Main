@@ -15,280 +15,283 @@ const Notification = () => {
     }
 
     return (
-        <SafeAreaView style={styles.container}>
-            <StatusBar
-                backgroundColor={'#0C0F14'}
-            />
+        // <SafeAreaView style={styles.container}>
+        //     <StatusBar
+        //         backgroundColor={'#0C0F14'}
+        //     />
 
-            <View style={styles.rowToolBar}>
-                <TouchableOpacity>
-                    <Image
-                        source={require("../../../../assets/images/icback.png")}
-                    />
-                </TouchableOpacity>
+        //     {/* <View style={styles.rowToolBar}>
+        //         <TouchableOpacity>
+        //             <Image
+        //                 source={require("../../../../assets/images/icback.png")}
+        //             />
+        //         </TouchableOpacity>
 
-                <Text style={styles.txtLabelScreen}>Order History</Text>
+        //         <Text style={styles.txtLabelScreen}>Order History</Text>
 
-                <TouchableOpacity
-                    onPress={goToSetting}>
-                    <Image
-                        source={require("../../../../assets/images/ic_user.png")}
-                    />
-                </TouchableOpacity>
+        //         <TouchableOpacity
+        //             onPress={goToSetting}>
+        //             <Image
+        //                 source={require("../../../../assets/images/ic_user.png")}
+        //             />
+        //         </TouchableOpacity>
+        //     </View> */}
+
+        //     <ScrollView>
+        //         <View style={styles.spaceItem}>
+        //             <View style={styles.containerDate}>
+        //                 <View style={styles.flexRowBetween}>
+        //                     <Text style={styles.txtLabelDate}>Order Date</Text>
+        //                     <Text style={styles.txtLabelDate}>Total Amount</Text>
+        //                 </View>
+        //                 <View style={styles.flexRowBetween}>
+        //                     <Text style={styles.txtSizeDate}>20th March 16:23</Text>
+        //                     <Text style={styles.txtSizeTotalPrice}>$ 74.40</Text>
+        //                 </View>
+        //             </View>
+
+        //             {/* Item 1  */}
+        //             <LinearGradient
+        //                 style={styles.tableItem}
+        //                 colors={colorLinear}
+        //                 start={startLinear}
+        //                 end={endLinear}
+        //             >
+        //                 {/* row 1 */}
+        //                 <View style={styles.rowDetailInTable}>
+        //                     <Image
+        //                         style={styles.sizeImageInTable}
+        //                         source={require("../../../../assets/images/caffe1.png")}
+        //                     />
+
+        //                     <View style={styles.rowSumPrice}>
+        //                         <View>
+        //                             <Text style={styles.txtNameItemInTable}>Cappuccino</Text>
+        //                             <Text style={styles.txtTypeInTable}>With Steamed Milk</Text>
+        //                         </View>
+
+        //                         <Text style={styles.charactorDolar}>$ <Text style={styles.txtColorWhite}>37.20</Text></Text>
+        //                     </View>
+        //                 </View>
+
+
+        //                 <View style={styles.tableSize}>
+
+        //                     {/* Size S  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtSizeSmall}>S</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+
+        //                     {/* Size M  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtSizeSmall}>M</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+
+        //                     {/* Size L  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtSizeSmall}>L</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+        //                 </View>
+        //             </LinearGradient>
+
+        //             {/* Item 2 */}
+        //             <LinearGradient
+        //                 style={styles.tableItem}
+        //                 colors={colorLinear}
+        //                 start={startLinear}
+        //                 end={endLinear}
+        //             >
+        //                 {/* row 1 */}
+        //                 <View style={styles.rowDetailInTable}>
+        //                     <Image
+        //                         style={styles.sizeImageInTable}
+        //                         source={require("../../../../assets/images/caffe2.png")}
+        //                     />
+
+        //                     <View style={styles.rowSumPrice}>
+        //                         <View>
+        //                             <Text style={styles.txtNameItemInTable}>Cappuccino</Text>
+        //                             <Text style={styles.txtTypeInTable}>With Steamed Milk</Text>
+        //                         </View>
+
+        //                         <Text style={styles.charactorDolar}>$ <Text style={styles.txtColorWhite}>37.20</Text></Text>
+        //                     </View>
+        //                 </View>
+
+
+        //                 <View style={styles.tableSize}>
+
+        //                     {/* Size S  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtSizeSmall}>S</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+
+        //                     {/* Size M  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtSizeSmall}>M</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+
+
+        //                 </View>
+        //             </LinearGradient>
+        //         </View>
+
+        //         {/* item 3 */}
+        //         <View style={styles.spaceItem}>
+        //             <View style={styles.containerDate}>
+        //                 <View style={styles.flexRowBetween}>
+        //                     <Text style={styles.txtLabelDate}>Order Date</Text>
+        //                     <Text style={styles.txtLabelDate}>Total Amount</Text>
+        //                 </View>
+        //                 <View style={styles.flexRowBetween}>
+        //                     <Text style={styles.txtSizeDate}>20th March 16:23</Text>
+        //                     <Text style={styles.txtSizeTotalPrice}>$ 74.40</Text>
+        //                 </View>
+        //             </View>
+        //             <LinearGradient
+        //                 style={styles.tableItem}
+        //                 colors={colorLinear}
+        //                 start={startLinear}
+        //                 end={endLinear}
+        //             >
+        //                 {/* row 1 */}
+        //                 <View style={styles.rowDetailInTable}>
+        //                     <Image
+        //                         style={styles.sizeImageInTable}
+        //                         source={require("../../../../assets/images/caffe3.png")}
+        //                     />
+
+        //                     <View style={styles.rowSumPrice}>
+        //                         <View>
+        //                             <Text style={styles.txtNameItemInTable}>Liberica Beans</Text>
+        //                             <Text style={styles.txtTypeInTable}>From Africa</Text>
+        //                         </View>
+
+        //                         <Text style={styles.charactorDolar}>$ <Text style={styles.txtColorWhite}>37.20</Text></Text>
+        //                     </View>
+        //                 </View>
+
+
+        //                 <View style={styles.tableSize}>
+
+        //                     {/* 250gm  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtWeight}>250gm</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+
+        //                     {/* Size M  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtWeight}>500gm</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+
+        //                     {/* Size L  */}
+        //                     <View style={styles.rowSize}>
+        //                         <View style={styles.rowSizeAndSinglePrice}>
+        //                             <Text style={styles.txtWeight}>1Kg</Text>
+        //                             <Text style={styles.txtPrice}>
+        //                                 <Text style={styles.symbol}>$ </Text>
+        //                                 4.20</Text>
+        //                         </View>
+
+        //                         <Text style={styles.txtX2}>
+        //                             <Text style={styles.symbol}>X </Text>
+        //                             2</Text>
+
+        //                         <Text style={styles.txtSinglePrice}>8.40</Text>
+        //                     </View>
+        //                 </View>
+        //             </LinearGradient>
+        //         </View>
+
+        //     </ScrollView>
+
+        //     <TouchableOpacity
+        //         style={styles.btnSave}>
+        //         <Text style={styles.btnSignInText}>Download</Text>
+        //     </TouchableOpacity>
+        // </SafeAreaView>
+       
+            <View style={styles.container}>
+
             </View>
-
-            <ScrollView
-
-            >
-                <View style={styles.spaceItem}>
-                    <View style={styles.containerDate}>
-                        <View style={styles.flexRowBetween}>
-                            <Text style={styles.txtLabelDate}>Order Date</Text>
-                            <Text style={styles.txtLabelDate}>Total Amount</Text>
-                        </View>
-                        <View style={styles.flexRowBetween}>
-                            <Text style={styles.txtSizeDate}>20th March 16:23</Text>
-                            <Text style={styles.txtSizeTotalPrice}>$ 74.40</Text>
-                        </View>
-                    </View>
-
-                    {/* Item 1  */}
-                    <LinearGradient
-                        style={styles.tableItem}
-                        colors={colorLinear}
-                        start={startLinear}
-                        end={endLinear}
-                    >
-                        {/* row 1 */}
-                        <View style={styles.rowDetailInTable}>
-                            <Image
-                                style={styles.sizeImageInTable}
-                                source={require("../../../../assets/images/caffe1.png")}
-                            />
-
-                            <View style={styles.rowSumPrice}>
-                                <View>
-                                    <Text style={styles.txtNameItemInTable}>Cappuccino</Text>
-                                    <Text style={styles.txtTypeInTable}>With Steamed Milk</Text>
-                                </View>
-
-                                <Text style={styles.charactorDolar}>$ <Text style={styles.txtColorWhite}>37.20</Text></Text>
-                            </View>
-                        </View>
-
-
-                        <View style={styles.tableSize}>
-
-                            {/* Size S  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtSizeSmall}>S</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-
-                            {/* Size M  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtSizeSmall}>M</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-
-                            {/* Size L  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtSizeSmall}>L</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-                        </View>
-                    </LinearGradient>
-
-                    {/* Item 2 */}
-                    <LinearGradient
-                        style={styles.tableItem}
-                        colors={colorLinear}
-                        start={startLinear}
-                        end={endLinear}
-                    >
-                        {/* row 1 */}
-                        <View style={styles.rowDetailInTable}>
-                            <Image
-                                style={styles.sizeImageInTable}
-                                source={require("../../../../assets/images/caffe2.png")}
-                            />
-
-                            <View style={styles.rowSumPrice}>
-                                <View>
-                                    <Text style={styles.txtNameItemInTable}>Cappuccino</Text>
-                                    <Text style={styles.txtTypeInTable}>With Steamed Milk</Text>
-                                </View>
-
-                                <Text style={styles.charactorDolar}>$ <Text style={styles.txtColorWhite}>37.20</Text></Text>
-                            </View>
-                        </View>
-
-
-                        <View style={styles.tableSize}>
-
-                            {/* Size S  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtSizeSmall}>S</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-
-                            {/* Size M  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtSizeSmall}>M</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-
-
-                        </View>
-                    </LinearGradient>
-                </View>
-
-                {/* item 3 */}
-                <View style={styles.spaceItem}>
-                    <View style={styles.containerDate}>
-                        <View style={styles.flexRowBetween}>
-                            <Text style={styles.txtLabelDate}>Order Date</Text>
-                            <Text style={styles.txtLabelDate}>Total Amount</Text>
-                        </View>
-                        <View style={styles.flexRowBetween}>
-                            <Text style={styles.txtSizeDate}>20th March 16:23</Text>
-                            <Text style={styles.txtSizeTotalPrice}>$ 74.40</Text>
-                        </View>
-                    </View>
-                    <LinearGradient
-                        style={styles.tableItem}
-                        colors={colorLinear}
-                        start={startLinear}
-                        end={endLinear}
-                    >
-                        {/* row 1 */}
-                        <View style={styles.rowDetailInTable}>
-                            <Image
-                                style={styles.sizeImageInTable}
-                                source={require("../../../../assets/images/caffe3.png")}
-                            />
-
-                            <View style={styles.rowSumPrice}>
-                                <View>
-                                    <Text style={styles.txtNameItemInTable}>Liberica Beans</Text>
-                                    <Text style={styles.txtTypeInTable}>From Africa</Text>
-                                </View>
-
-                                <Text style={styles.charactorDolar}>$ <Text style={styles.txtColorWhite}>37.20</Text></Text>
-                            </View>
-                        </View>
-
-
-                        <View style={styles.tableSize}>
-
-                            {/* 250gm  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtWeight}>250gm</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-
-                            {/* Size M  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtWeight}>500gm</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-
-                            {/* Size L  */}
-                            <View style={styles.rowSize}>
-                                <View style={styles.rowSizeAndSinglePrice}>
-                                    <Text style={styles.txtWeight}>1Kg</Text>
-                                    <Text style={styles.txtPrice}>
-                                        <Text style={styles.symbol}>$ </Text>
-                                        4.20</Text>
-                                </View>
-
-                                <Text style={styles.txtX2}>
-                                    <Text style={styles.symbol}>X </Text>
-                                    2</Text>
-
-                                <Text style={styles.txtSinglePrice}>8.40</Text>
-                            </View>
-                        </View>
-                    </LinearGradient>
-                </View>
-
-            </ScrollView>
-
-            <TouchableOpacity
-                style={styles.btnSave}>
-                <Text style={styles.btnSignInText}>Download</Text>
-            </TouchableOpacity>
-        </SafeAreaView>
+        
     )
 }
 
@@ -304,7 +307,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingHorizontal: 20,
-        backgroundColor: '#0C0F14'
+        backgroundColor: '#fff'
     },
     txtLabelScreen: {
         fontSize: 20,

@@ -33,7 +33,7 @@ const ItemCombo = (props) => {
 
         <View style={[styles.Container, styles.bg_container]}>
             <TouchableOpacity style={{ flexDirection: 'row' }} onPress={() => { navigation.navigate('Detail', { data: { product } }) }}>
-                <View style={styles.bottom}>
+                <View style={[styles.bottom,{flex:1}]}>
                     <Text style={styles.name} >{product?.name}</Text>
                     {/* numberOfLines={1} */}
                     {/* <Text style={styles.info}>{product?.info}</Text> */}

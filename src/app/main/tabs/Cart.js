@@ -108,7 +108,7 @@ const Cart =  ({ route }) => {
   
   return (
     <View style={styles.container}>
-      <View style={{
+      {/* <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 30
@@ -179,14 +179,15 @@ const Cart =  ({ route }) => {
             </Text>
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
+       <Text>Cart</Text>
     </View>
   );
 }
 export default Cart;
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#0c0f14',
+    backgroundColor: 'white',
     width: '100%',
     height: '100%',
     padding: 30,

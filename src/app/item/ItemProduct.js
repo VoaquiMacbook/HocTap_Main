@@ -39,7 +39,7 @@ const ItemProduct = (props) => {
                     <View style={[styles.top]}>
                         <View>
                             <Image
-                                style={{ borderRadius: 10, marginBottom: 10, width: 155, height: 134, backgroundColor:'gray'}}
+                                style={{ borderRadius: 10, marginBottom: 10, width: 180, height: 154, backgroundColor:'gray'}}
                                 // source={{ uri: `${product.image}` }} 
                                 
                                 />
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
         borderRadius: 16,
     },
     Container: {
-        width: 160,
+        width: '45%',
         height: 'auto',
         marginEnd: 10,
         borderRadius: 10,

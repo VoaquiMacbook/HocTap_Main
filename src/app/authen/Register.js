@@ -52,7 +52,7 @@ const Register = (props) => {
       style={styles.bgContainer}
       source={require('../../../assets/images/bg_register.png')}>
       <View style={styles.container}>
-        <TouchableOpacity style={styles.btn_back} >
+        <TouchableOpacity style={styles.btn_back} onPress={navigation.goBack} >
           <Image style={{ width: 32, height: 32 }} source={require('../../../assets/images/btn_back.png')}></Image>
         </TouchableOpacity>
         <View style={styles.welcomeContainer}>
@@ -178,7 +178,7 @@ const Register = (props) => {
           {/* <TouchableOpacity onPress={navigation.goBack}>
           <Text style={styles.signInText}>Sign in</Text>
         </TouchableOpacity> */}
-          <TouchableOpacity>
+          <TouchableOpacity onPress={navigation.goBack}>
             <Text style={styles.signInText}> Đăng nhập</Text>
           </TouchableOpacity>
 

@@ -123,7 +123,7 @@ export const Favorite = () => {
   }
   return (
     <View style={styles.container}>
-      <View style={{
+      {/* <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 30
@@ -160,7 +160,7 @@ export const Favorite = () => {
             onRefresh={onRefresh}
           />
         }
-      />
+      /> */}
     </View>
   );
 
@@ -168,7 +168,7 @@ export const Favorite = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#0c0f14',
+    backgroundColor: '#fff',
     width: '100%',
     height: '100%',
     padding: 20,

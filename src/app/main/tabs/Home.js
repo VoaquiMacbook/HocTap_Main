@@ -91,7 +91,7 @@ const Home = (props) => {
   return (
     <View style={styles.Container}>
       <StatusBar backgroundColor={'#0C0F14'} />
-
+      <ScrollView>
       <View style={styles.header}>
         {/* <TouchableOpacity
           style={styles.btnMenu}
@@ -105,7 +105,11 @@ const Home = (props) => {
         >
           <Image style={styles.imgHeader} source={require('../../../../assets/images/ic_user.png')} />
         </TouchableOpacity> */}
-
+        <Image style={{width:'100%', height:318}} source={require('../../../../assets/images/img_carosel.png')} ></Image>
+        <TouchableOpacity style={{position:'absolute', width:'100%', alignItems:'flex-end', padding:20}}  onPress={() => navigation.navigate('Cart')}>
+        <Image source={require('../../../../assets/images/ic_cart_.png')} />
+        </TouchableOpacity>
+       
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false}
@@ -209,7 +213,9 @@ const Home = (props) => {
           />
         </View>
       </ScrollView>
+      </ScrollView>
     </View>
+    
   )
 }
 
@@ -299,6 +305,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
+    position:'relative',
   },
   Container: {
     backgroundColor: '#FFFFFF',

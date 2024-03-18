@@ -16,43 +16,53 @@ const tabScreenOptions = ({ route }) => {
     return {
         headerShown: false,
         tabBarStyle: {
-            backgroundColor: '#0C0F14'
+            backgroundColor: 'white'
         },
 
         tabBarIcon: ({ focused }) => {
             if (route.name == 'Home') {
                 if (focused) {
-                    return <Image source={require('../../../assets/images/ic_home.png')} />
+                    return <Image source={require('../../../assets/images/home_.png')} />
                 }
-                return <Image source={require('../../../assets/images/ic_home_default.png')} />
-            } else if (route.name == 'Cart') {
+                return <Image source={require('../../../assets/images/home_.png')} />
+            } else if (route.name == 'Search') {
                 if (focused) {
                     return (
                         <View>
-                            <Image source={require('../../../assets/images/ic_cart.png')} />
-                            <Text style={styles.Cart}>{cart.reduce((total, item) => total + item.number, 0)}</Text>
+                            <Image source={require('../../../assets/images/serach_.png')} />
+                            {/* <Text style={styles.Cart}>{cart.reduce((total, item) => total + item.number, 0)}</Text> */}
                         </View>
 
                     );
                 }
                 return (
                     <View>
-                        <Image source={require('../../../assets/images/ic_cart_default.png')} />
-                        <Text style={styles.Cart}>{cart.reduce((total, item) => total + item.number, 0)}</Text>
+                        <Image source={require('../../../assets/images/serach_.png')} />
+                        {/* <Text style={styles.Cart}>{cart.reduce((total, item) => total + item.number, 0)}</Text> */}
                     </View>
 
                 );
             }
             else if (route.name == 'Favorite') {
                 if (focused) {
-                    return <Image source={require('../../../assets/images/ic_favorite.png')} />
+                    return (
+                        <View>
+                            <Image source={require('../../../assets/images/notification_.png')} />
+                        </View>
+                    )
                 }
-                return <Image source={require('../../../assets/images/ic_favorite_default.png')} />
-            } else if (route.name == 'Notification') {
+                return (
+                    <View>
+                        <Image source={require('../../../assets/images/notification_.png')} />
+                          <Text style={styles.Cart}>{cart.reduce((total, item) => total + item.number, 0)}</Text>
+                    </View>
+                )
+
+            } else if (route.name == 'Profile') {
                 if (focused) {
-                    return <Image source={require('../../../assets/images/ic_notification.png')} />
+                    return <Image source={require('../../../assets/images/add_.png')} />
                 }
-                return <Image source={require('../../../assets/images/ic_notification_default.png')} />
+                return <Image source={require('../../../assets/images/add_.png')} />
             }
         },
         tabBarLabel: ({ focused }) => {
@@ -60,9 +70,9 @@ const tabScreenOptions = ({ route }) => {
                 if (focused) {
                     return <Text style={{ color: '#D17842' }}>Home</Text>
                 }
-            } else if (route.name == 'Cart') {
+            } else if (route.name == 'Search') {
                 if (focused) {
-                    return (<Text style={{ color: '#D17842' }}>Cart</Text>
+                    return (<Text style={{ color: '#D17842' }}>Search</Text>
                     );
                 }
             }
@@ -71,25 +81,28 @@ const tabScreenOptions = ({ route }) => {
                     return <Text style={{ color: '#D17842' }}>Favorite</Text>
                 }
             }
-            else if (route.name == 'Notification') {
+            else if (route.name == 'Profile') {
                 if (focused) {
-                    return <Text style={{ color: '#D17842' }}>Notification</Text>
+                    return <Text style={{ color: '#D17842' }}>Profile</Text>
                 }
             }
         }
     }
 }
 
-
+import Search from './tabs/Search'
+import Profile from './tabs/Profile'
 const Tab = createBottomTabNavigator();
 const MainTabNavigation = () => {
 
     return (
         <Tab.Navigator screenOptions={tabScreenOptions}>
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Cart" component={Cart} />
+            {/* <Tab.Screen name="Cart" component={Cart} /> */}
+            <Tab.Screen name="Search" component={Search} />
             <Tab.Screen name="Favorite" component={Favorite} />
-            <Tab.Screen name="Notification" component={Notification} />
+            <Tab.Screen name="Profile" component={Profile} />
+            
         </Tab.Navigator>
     )
 }
@@ -105,6 +118,7 @@ import Login from '../authen/Login'
 import About from './stacks/About'
 import Help from './stacks/Help'
 import Register from '../authen/Register'
+
 const Stack = createNativeStackNavigator()
 
 const MainStackNavigation = () => {
@@ -121,6 +135,8 @@ const MainStackNavigation = () => {
             <Stack.Screen name="About" component={About} />
             <Stack.Screen name="Help" component={Help} />
             <Stack.Screen name="Register" component={Register} />
+            <Stack.Screen name="Cart" component={Cart} />
+            
         </Stack.Navigator>
     )
 }
