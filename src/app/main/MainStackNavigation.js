@@ -118,6 +118,7 @@ import Login from '../authen/Login'
 import About from './stacks/About'
 import Help from './stacks/Help'
 import Register from '../authen/Register'
+import ListProduct from './tabs/ListProduct'
 
 
 const Stack = createNativeStackNavigator()
@@ -137,6 +138,8 @@ const MainStackNavigation = () => {
             <Stack.Screen name="Help" component={Help} />
             <Stack.Screen name="Register" component={Register} />
             <Stack.Screen name="Cart" component={Cart} />
+            <Stack.Screen name="ListProduct" component={ListProduct} />
+            
         </Stack.Navigator>
     )
 }
