@@ -1,4 +1,8 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, StatusBar, TextInput, ScrollView, FlatList } from 'react-native'
+import {
+  StyleSheet, Text, View, TouchableOpacity,
+  Image, StatusBar, TextInput, FlatList, SectionList, SafeAreaView
+} from 'react-native'
+import { ScrollView } from 'react-native-virtualized-view'
 import React, { useState, useEffect, useCallback, useContext } from 'react'
 import AxiosInstance from '../../helper/AxiosInstance'
 import ItemProduct from '../../item/ItemProduct'
@@ -73,27 +77,37 @@ const Home = (props) => {
   // item combo new
   const renderItem = ({ item }) => (
     <View style={styles.item}>
-        <View >
-            <Image
-                style={styles.avt_container}
-                source={{ uri: item.photo }}/>
-        </View>
-        <View style={styles.txt_container_item}>
-            <Text style={styles.txt_itemM} >{item.name}</Text>
-            <Text style={styles.txt_item}>{item.postion}</Text>
-        </View>
+      <View >
+        <Image
+          style={styles.avt_container}
+          source={{ uri: item.photo }} />
+      </View>
+      <View style={styles.txt_container_item}>
+        <Text style={styles.txt_itemM} >{item.name}</Text>
+        <Text style={styles.txt_item}>{item.postion}</Text>
+      </View>
 
-        <Text style={styles.txt_itemM}>{item.rice}</Text>
+      <Text style={styles.txt_itemM}>{item.rice}</Text>
 
     </View>
-);
+  );
+  const sections = [
+    { data: products.slice(0, 4) }, // Thay đổi data cho phù hợp với Section 1
+    // Thêm các section khác nếu cần
+  ];
+
+  const renderSectionHeader = ({ section }) => (
+    <Text style={styles.sectionHeader}></Text> // Thay đổi style cho phù hợp với section header
+  );
+
 
   return (
-    <View style={styles.Container}>
+    <SafeAreaView style={styles.Container}>
+    <ScrollView>
       <StatusBar backgroundColor={'#0C0F14'} />
-      <ScrollView>
-      <View style={styles.header}>
-        {/* <TouchableOpacity
+      {/* <ScrollView> */}
+        <View style={styles.header}>
+          {/* <TouchableOpacity
           style={styles.btnMenu}
           onPress={() => navigation.navigate('Settings')}
         >
@@ -105,19 +119,18 @@ const Home = (props) => {
         >
           <Image style={styles.imgHeader} source={require('../../../../assets/images/ic_user.png')} />
         </TouchableOpacity> */}
-        <Image style={{width:'100%', height:318}} source={require('../../../../assets/images/img_carosel.png')} ></Image>
-        <TouchableOpacity style={{position:'absolute', width:'100%', alignItems:'flex-end', padding:20}}  onPress={() => navigation.navigate('Cart')}>
-        <Image source={require('../../../../assets/images/ic_cart_.png')} />
-        </TouchableOpacity>
-       
-      </View>
+          <Image style={{ width: '100%', height: 318 }} source={require('../../../../assets/images/img_carosel.png')} ></Image>
+          <TouchableOpacity style={{ position: 'absolute', width: '100%', alignItems: 'flex-end', padding: 20 }} onPress={() => navigation.navigate('Cart')}>
+            <Image source={require('../../../../assets/images/ic_cart_.png')} />
+          </TouchableOpacity>
 
-      <ScrollView showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}>
+        </View>
+
+
         <View style={styles.textHeader}>
           <Text style={styles.txtHeader}>Cây trồng</Text>
         </View>
-       
+
         {/* <View style={styles.listLoai}>
           <ScrollView
             horizontal={true}
@@ -138,12 +151,14 @@ const Home = (props) => {
             ))}
           </ScrollView>
         </View> */}
+        
         <View style={styles.listCoffee}>
           <FlatList
             numColumns={2}
             data={products.slice(0, 4)}
             horizontal={false}
             showsHorizontalScrollIndicator={false}
+            nestedScrollEnabled={false}
             renderItem={({ item }) => (
               <ItemProduct
                 navigation={navigation}
@@ -153,10 +168,10 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
-        <View style={{alignItems:'flex-end'}}>
-        <TouchableOpacity>
-          <Text style={{fontSize:12,lineHeight:20,fontWeight:'500', marginEnd: 14,}}>Xem Thêm Cây trồng</Text>
-        </TouchableOpacity>
+        <View style={{ alignItems: 'flex-end' }}>
+          <TouchableOpacity>
+            <Text style={{ fontSize: 12, lineHeight: 20, fontWeight: '500', marginEnd: 14, }}>Xem Thêm Cây trồng</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.textHeader}>
           <Text style={styles.txtHeader}>Chậu cây trồng</Text>
@@ -167,6 +182,7 @@ const Home = (props) => {
             data={products.slice(0, 4)}
             horizontal={false}
             showsHorizontalScrollIndicator={false}
+            nestedScrollEnabled={false}
             renderItem={({ item }) => (
               <ItemProduct
                 navigation={navigation}
@@ -185,6 +201,7 @@ const Home = (props) => {
             data={products.slice(0, 4)}
             horizontal={false}
             showsHorizontalScrollIndicator={false}
+            nestedScrollEnabled={false}
             renderItem={({ item }) => (
               <ItemProduct
                 navigation={navigation}
@@ -194,7 +211,6 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
-
         <View style={styles.textHeader}>
           <Text style={styles.txtHeader}>Combo chăm sóc (mới)</Text>
         </View>
@@ -203,6 +219,7 @@ const Home = (props) => {
             data={products.slice(0, 3)}
             horizontal={false}
             showsHorizontalScrollIndicator={false}
+            nestedScrollEnabled={false}
             renderItem={({ item }) => (
               <ItemCombo
                 navigation={navigation}
@@ -212,10 +229,12 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
-      </ScrollView>
-      </ScrollView>
-    </View>
+
+      {/* </ScrollView> */}
     
+    </ScrollView>
+    </SafeAreaView>
+
   )
 }
 
@@ -305,7 +324,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    position:'relative',
+    position: 'relative',
   },
   Container: {
     backgroundColor: '#FFFFFF',
