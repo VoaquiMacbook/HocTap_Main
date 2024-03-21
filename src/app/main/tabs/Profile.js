@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image,Alert} from 'react-native'
 import React, { useState, useContext } from 'react'
 import { AppContext } from '../AppContext'
+import HeaderCustuom from '../../custom/HeaderCustuom'
 const Profile = (props) => {
   const { isLogin, setIsLogin } = useContext(AppContext)
   const { navigation } = props;
@@ -50,6 +51,14 @@ const Profile = (props) => {
         </TouchableOpacity>
         <Text style={styles.text_navigation}>Setting</Text>
       </View> */}
+      <View>
+            <HeaderCustuom
+                leftIcon={require('../../../../assets/images/btn_back.png')}
+                title={'Header'}
+                rightIcon={require('../../../../assets/images/btn_back.png')}
+            />
+           
+        </View>
 
     <View style={{height:42}}>
         <Text style={styles.txt_conatainer_scuryte}>Chung</Text>
