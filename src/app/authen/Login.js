@@ -12,7 +12,7 @@ const Login = (props) => {
     const [password, setPassword] = useState('');
     const [bugEmail, setBugEmail] = useState('');
     const [bugPassword, setBugPassword] = useState('');
-    const [canLogIn, setCanLogin] = useState(false);
+    const [canLogIn, setCanLogin] = useState(true);
     const { navigation } = props;
     const [eyeImage, setEyeImage] = useState(require('../../../assets/images/ic_eye.png'));
 

@@ -103,9 +103,9 @@ const Home = (props) => {
 
   return (
     <SafeAreaView style={styles.Container}>
-    <ScrollView>
-      <StatusBar backgroundColor={'#0C0F14'} />
-      {/* <ScrollView> */}
+      <ScrollView>
+        <StatusBar backgroundColor={'#0C0F14'} />
+        {/* <ScrollView> */}
         <View style={styles.header}>
           {/* <TouchableOpacity
           style={styles.btnMenu}
@@ -123,35 +123,18 @@ const Home = (props) => {
           <TouchableOpacity style={{ position: 'absolute', width: '100%', alignItems: 'flex-end', padding: 20 }} onPress={() => navigation.navigate('Cart')}>
             <Image source={require('../../../../assets/images/ic_cart_.png')} />
           </TouchableOpacity>
+          <TouchableOpacity style={{ position: 'absolute', width: '100%', padding: 28 }} onPress={() => navigation.navigate('Cart')}>
+            <View style={styles.horizontal}>
+              <Text style={{ fontSize: 16, color: '#007537', fontWeight: '500' }}>Xem hàng mới về</Text>
+              <Image style={{width:24,height:18 }} source={require('../../../../assets/images/fi_arrow-right.png')}/>
+            </View>
 
+          </TouchableOpacity>
         </View>
-
-
+        <View style={styles.Container_body}>
         <View style={styles.textHeader}>
           <Text style={styles.txtHeader}>Cây trồng</Text>
         </View>
-
-        {/* <View style={styles.listLoai}>
-          <ScrollView
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}>
-            {categories.slice(1,2).map((item, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.itemLoai}
-                onPress={() => selectCategory(item, index)}>
-
-                <Text style={[styles.txtLoai, index === selected && styles.txtLoaiSeleted]}>
-                  {item?.name}
-                </Text>
-                {index == selected &&
-                  <View style={styles.selectedLoai}></View>
-                }
-              </TouchableOpacity>
-            ))}
-          </ScrollView>
-        </View> */}
-        
         <View style={styles.listCoffee}>
           <FlatList
             numColumns={2}
@@ -192,6 +175,11 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
+        <View style={{ alignItems: 'flex-end' }}>
+          <TouchableOpacity>
+            <Text style={{ fontSize: 12, lineHeight: 20, fontWeight: '500', marginEnd: 14, }}>Xem Thêm Cây trồng</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.textHeader}>
           <Text style={styles.txtHeader}>Phụ kiện</Text>
         </View>
@@ -211,6 +199,11 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
+        <View style={{ alignItems: 'flex-end' }}>
+          <TouchableOpacity>
+            <Text style={{ fontSize: 12, lineHeight: 20, fontWeight: '500', marginEnd: 14, }}>Xem Thêm Cây trồng</Text>
+          </TouchableOpacity>
+        </View>
         <View style={styles.textHeader}>
           <Text style={styles.txtHeader}>Combo chăm sóc (mới)</Text>
         </View>
@@ -229,10 +222,9 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
+        </View>
 
-      {/* </ScrollView> */}
-    
-    </ScrollView>
+      </ScrollView>
     </SafeAreaView>
 
   )
@@ -241,6 +233,22 @@ const Home = (props) => {
 export default Home
 
 const styles = StyleSheet.create({
+  Container_body:{
+    margin:15
+  },
+  // cloumn, row
+  vertical: {
+    flexDirection: 'column',
+  },
+  horizontal: {
+    flexDirection: 'row',
+    height:24,
+    marginVertical:100,
+  },
+  // flex
+  flex: {
+    flex: 1,
+  },
   listCoffeeBean: {
     marginTop: 19,
   },

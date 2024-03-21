@@ -119,6 +119,7 @@ import About from './stacks/About'
 import Help from './stacks/Help'
 import Register from '../authen/Register'
 
+
 const Stack = createNativeStackNavigator()
 
 const MainStackNavigation = () => {
@@ -136,7 +137,6 @@ const MainStackNavigation = () => {
             <Stack.Screen name="Help" component={Help} />
             <Stack.Screen name="Register" component={Register} />
             <Stack.Screen name="Cart" component={Cart} />
-            
         </Stack.Navigator>
     )
 }

@@ -39,9 +39,8 @@ const ItemProduct = (props) => {
                     <View style={[styles.top]}>
                         <View>
                             <Image
-                                style={{ borderRadius: 10, marginBottom: 10, width: 180, height: 154, backgroundColor:'gray'}}
+                                style={{ borderRadius: 10, marginBottom: 10, width: 168, height: 154, backgroundColor:'gray'}}
                                 // source={{ uri: `${product.image}` }} 
-                                
                                 />
                         </View>
                         {/* <Text style={{ position: 'absolute', top: 2, right: 5, color: 'white', fontWeight: 'bold', fontSize: 11, right: 11 }}>
@@ -51,10 +50,12 @@ const ItemProduct = (props) => {
                     <View style={styles.bottom}>
                         <Text style={styles.name} numberOfLines={1}>{product?.name}</Text>
                         <Text style={styles.info}>{product?.info}</Text>
+                        <Text style={{color:'gray'}}>Ưa bóng</Text>
                         <View style={styles.priceContainer}>
                             <Text style={styles.price}>
                                 {product?.price}
                             </Text>
+                          
 
                             {/* <TouchableOpacity style={styles.btnAdd} onPress={() => addToCart(product)}>
                                 <Image source={require('../../../assets/images/btn_add.png')} />
@@ -70,6 +71,17 @@ const ItemProduct = (props) => {
 export default ItemProduct;
 
 const styles = StyleSheet.create({
+    // cloumn, row
+  vertical: {
+    flexDirection: 'column',
+  },
+  horizontal: {
+    flexDirection: 'row',
+  },
+  // flex
+  flex: {
+    flex: 1,
+  },
     bg_container:{
         elevation: 2,
         shadowOffset: { width: 2, height: 2 },
@@ -160,6 +172,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         marginTop:10,
         marginStart:10,
+        position:'relative'
         // display: 'flex',
         // flexDirection: 'column',
         // justifyContent: 'center',

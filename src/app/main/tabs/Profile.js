@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image,Alert} from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, Alert } from 'react-native'
 import React, { useState, useContext } from 'react'
 import { AppContext } from '../AppContext'
 import HeaderCustuom from '../../custom/HeaderCustuom'
@@ -17,7 +17,7 @@ const Profile = (props) => {
   const handleLogin = () => {
     navigation.navigate('Login');
   }
-  
+
 
   const handleLogout = () => {
     Alert.alert(
@@ -44,7 +44,7 @@ const Profile = (props) => {
   };
   return (
     <View style={styles.container}>
-        
+
       {/* <View style={styles.bar_navigation}>
         <TouchableOpacity style={styles.back_navigation} onPress={navigation.goBack}>
           <Image source={require('../../../../assets/images/ic_back.png')} />
@@ -52,58 +52,65 @@ const Profile = (props) => {
         <Text style={styles.text_navigation}>Setting</Text>
       </View> */}
       <View>
-            <HeaderCustuom
-                leftIcon={require('../../../../assets/images/btn_back.png')}
-                title={'Header'}
-                rightIcon={require('../../../../assets/images/btn_back.png')}
-            />
-           
+        <HeaderCustuom
+          leftIcon={false}
+          title={'PROFILE'}
+          rightIcon={false}
+        />
+      </View>
+      <View style={styles.container_headerProfile}>
+        <Image style={{ width: 49, height: 49, borderRadius: 30, }} source={require('../../../../assets/images/img_avt.jpeg')} />
+        <View style={styles.container_contentHeader}>
+        <Text>Võ A Qui</Text>
+        <Text>vohqui51202@icloud.com</Text>
         </View>
-
-    <View style={{height:42}}>
+        
+        
+      </View>
+      <View style={{ height: 42 }}>
         <Text style={styles.txt_conatainer_scuryte}>Chung</Text>
-        <View style={{height:0.5, width:'auto', backgroundColor:'gray',marginStart: 37,marginEnd:37}}></View>
-    </View>
-    <View>
-      <TouchableOpacity style={styles.item} onPress={Personal_Deltails}>
-        <Text style={styles.textItem}>Chỉnh sửa thông tin</Text>
-      </TouchableOpacity>
-    </View>
-    <View>
-      <TouchableOpacity style={styles.item}>
-        <Text style={styles.textItem}>Cẩm nang trồng cây</Text>
-      </TouchableOpacity>
-    </View>
-    <View>
-      <TouchableOpacity style={styles.item} onPress={History_Deltails}>
-        <Text style={styles.textItem}>Lịch sử giao dịch</Text>
-      </TouchableOpacity>
-    </View>
-    <View>
-      <TouchableOpacity style={styles.item} onPress={Address_Deltails}>
-        <Text style={styles.textItem}>Q & A</Text>  
-      </TouchableOpacity>
-    </View>
-    <View style={{height:42}}>
+        <View style={{ height: 0.5, width: 'auto', backgroundColor: 'gray', marginStart: 37, marginEnd: 37 }}></View>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.item} onPress={Personal_Deltails}>
+          <Text style={styles.textItem}>Chỉnh sửa thông tin</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.item}>
+          <Text style={styles.textItem}>Cẩm nang trồng cây</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.item} onPress={History_Deltails}>
+          <Text style={styles.textItem}>Lịch sử giao dịch</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.item} onPress={Address_Deltails}>
+          <Text style={styles.textItem}>Q & A</Text>
+        </TouchableOpacity>
+      </View>
+      <View style={{ height: 42 }}>
         <Text style={styles.txt_conatainer_scuryte}>Bảo mật và Điều khoản</Text>
-        <View style={{height:0.5, width:'auto', backgroundColor:'gray',marginStart: 37,marginEnd:37}}></View>
-    </View>
-    <View>
-      <TouchableOpacity style={styles.item} onPress={About}>
-        <Text style={styles.textItem}>Điều khoản và điều kiện</Text>
-      </TouchableOpacity>
-    </View>
-    <View>
-      <TouchableOpacity style={styles.item} onPress={Help}>
-        <Text style={styles.textItem}>Chính sách quyền riêng tư</Text>
-      </TouchableOpacity>
+        <View style={{ height: 0.5, width: 'auto', backgroundColor: 'gray', marginStart: 37, marginEnd: 37 }}></View>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.item} onPress={About}>
+          <Text style={styles.textItem}>Điều khoản và điều kiện</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.item} onPress={Help}>
+          <Text style={styles.textItem}>Chính sách quyền riêng tư</Text>
+        </TouchableOpacity>
       </View>
       <View>
         <TouchableOpacity style={styles.item} onPress={handleLogout}>
-         
+
           <Text style={styles.txt_logout}>Đăng xuất</Text>
-      
-        </TouchableOpacity> 
+
+        </TouchableOpacity>
       </View>
 
     </View>
@@ -113,13 +120,36 @@ const Profile = (props) => {
 export default Profile
 
 const styles = StyleSheet.create({
+  container_contentHeader:{
+    alignSelf:'center',
+    marginStart:20,
+  },
+  container_headerProfile: {
+    width: '100%',
+    height: 'auto',
+    flexDirection: 'row',
+    paddingStart:30,
+    marginBottom:25,
+    marginTop:20,
+  },
+  // cloumn, row
+  vertical: {
+    flexDirection: 'column',
+  },
+  horizontal: {
+    flexDirection: 'row',
+  },
+  // flex
+  flex: {
+    flex: 1,
+  },
   arrow: {
     width: 9,
     height: 16,
     position: 'absolute',
     right: 30,
   },
-  txt_conatainer_scuryte:{
+  txt_conatainer_scuryte: {
     color: 'gray',
     fontSize: 16,
     fontWeight: '400',
