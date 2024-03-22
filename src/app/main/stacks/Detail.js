@@ -437,12 +437,7 @@ const styles = StyleSheet.create({
     flex: 2,
     width: '80%'
   },
-  header:
-  {
-    backgroundColor: '#F6F6F6',
-    flex: 5,
-    alignItems: 'center'
-  },
+
   footer:
   {
     flexDirection: 'column',

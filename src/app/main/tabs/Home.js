@@ -123,12 +123,11 @@ const Home = (props) => {
           <TouchableOpacity style={{ position: 'absolute', width: '100%', alignItems: 'flex-end', padding: 20 }} onPress={() => navigation.navigate('Cart')}>
             <Image source={require('../../../../assets/images/ic_cart_.png')} />
           </TouchableOpacity>
-          <TouchableOpacity style={{ position: 'absolute', width: '100%', padding: 28 }} onPress={() => navigation.navigate('ListProduct')}>
+          <TouchableOpacity style={{ position: 'absolute', width: 'auto',height:'auto', padding: 28 }} onPress={() => navigation.navigate('ListProduct')}>
             <View style={styles.horizontal}>
               <Text style={{ fontSize: 16, color: '#007537', fontWeight: '500' }}>Xem hàng mới về</Text>
-              <Image style={{width:24,height:18 }} source={require('../../../../assets/images/fi_arrow-right.png')}/>
+              <Image style={{width:24,height:19 }} source={require('../../../../assets/images/fi_arrow-right.png')}/>
             </View>
-
           </TouchableOpacity>
         </View>
         <View style={styles.Container_body}>
