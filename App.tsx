@@ -34,12 +34,14 @@ import Bai2 from './src/voaqui/layDiemCong/Bai2';
 import HeaderCustuom from './src/voaqui/layDiemCong/HeaderCustuom';
 import Animation from './src/voaqui/layDiemCong/Animation/Animation';
 import Animation_6 from './src/voaqui/layDiemCong/Animation/Animation_6';
+// lab react2
+import Lab_4 from './src/voaqui/layDiemCong/lab_react2/Lab_4';
 function App(): React.JSX.Element {
   return (
     <AppProvider>
       <SafeAreaView style={styles.container}>
         <StatusBar/>
-        <AppNavigation />
+        {/* <AppNavigation /> */}
         {/* <Login/> */}
         {/* <Bai1/> */}
         {/* <Bai2/> */}
@@ -47,6 +49,7 @@ function App(): React.JSX.Element {
        {/* <Register/> */}
        {/* <Home/> */}
        {/* <Animation_6/> */}
+       <Lab_4/>
       </SafeAreaView>
     </AppProvider>
 
