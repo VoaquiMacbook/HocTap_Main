@@ -37,7 +37,8 @@ import Animation_6 from './src/voaqui/layDiemCong/Animation/Animation_6';
 // lab react2
 import Lab_4 from './src/voaqui/layDiemCong/lab_react2/Lab_4';
 import Animation from './src/voaqui/layDiemCong/lab_react2/lab3/Animation03';
-import Lab4_2 from './src/voaqui/layDiemCong/lab_react2/lab4/Lab4_2';
+import Lab4_2 from './src/voaqui/layDiemCong/lab_react2/lab4/Lab4_1';
+
 function App(): React.JSX.Element {
   return (
     <AppProvider>
@@ -53,7 +54,8 @@ function App(): React.JSX.Element {
        {/* <Animation_6/> */}
        {/* <Animation/> */}
        {/* <Lab_4/> */}
-       {/* <Lab4_2/> */}
+       <Lab4_2/>
+
       </SafeAreaView>
     </AppProvider>
 
