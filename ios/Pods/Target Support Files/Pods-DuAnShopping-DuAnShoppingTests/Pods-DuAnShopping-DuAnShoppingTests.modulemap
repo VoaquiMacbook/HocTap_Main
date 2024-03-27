@@ -1,0 +1,6 @@
+module Pods_DuAnShopping_DuAnShoppingTests {
+  umbrella header "Pods-DuAnShopping-DuAnShoppingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
