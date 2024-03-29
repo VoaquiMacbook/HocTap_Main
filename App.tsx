@@ -38,24 +38,24 @@ import Animation_6 from './src/voaqui/layDiemCong/Animation/Animation_6';
 import Lab_4 from './src/voaqui/layDiemCong/lab_react2/Lab_4';
 import Animation from './src/voaqui/layDiemCong/lab_react2/lab3/Animation03';
 import Lab4_2 from './src/voaqui/layDiemCong/lab_react2/lab4/Lab4_1';
-
+import Demo from './src/voaqui/demo_reactMongo/Demo';
 function App(): React.JSX.Element {
   return (
     <AppProvider>
       <SafeAreaView style={styles.container}>
-        <StatusBar/>
+        <StatusBar />
         {/* <AppNavigation /> */}
         {/* <Login/> */}
         {/* <Bai1/> */}
         {/* <Bai2/> */}
         {/* <HeaderCustuom/> */}
-       {/* <Register/> */}
-       {/* <Home/> */}
-       {/* <Animation_6/> */}
-       {/* <Animation/> */}
-       {/* <Lab_4/> */}
-       <Lab4_2/>
-
+        {/* <Register/> */}
+        {/* <Home/> */}
+        {/* <Animation_6/> */}
+        {/* <Animation/> */}
+        {/* <Lab_4/> */}
+        {/* <Lab4_2/> */}
+        <Demo />
       </SafeAreaView>
     </AppProvider>
 
