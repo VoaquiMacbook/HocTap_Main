@@ -50,10 +50,12 @@ const ItemCart = (props) => {
                     <View style={styles.bottom}>
                         <Text style={styles.name} numberOfLines={1}>{product?.name}</Text>
                         <Text style={styles.info}>{product?.info}</Text>
-                        <Text style={{color:'gray'}}>Ưa bóng</Text>
+                        <Text style={{color:'gray'}}>250.000đ</Text>
                         <View style={styles.priceContainer}>
                             <Text style={styles.price}>
+                                <Text style={{marginEnd:5}}>Còn</Text>
                                 {product?.price}
+                                <Text style={{marginStart:5}}>sp</Text>
                             </Text>
                           
 
