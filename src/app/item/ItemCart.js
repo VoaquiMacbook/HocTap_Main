@@ -36,35 +36,35 @@ const ItemCart = (props) => {
                 {/* <LinearGradient
                     // colors={['#252A32', 'rgba(38, 43, 51, 0)']}
                     style={styles.linearGradient}> */}
-                    <View style={[styles.top]}>
-                        <View>
-                            <Image
-                                style={{ borderRadius: 10, marginBottom: 10, width: 77, height: 77, backgroundColor:'gray'}}
-                                // source={{ uri: `${product.image}` }} 
-                                />
-                        </View>
-                        {/* <Text style={{ position: 'absolute', top: 2, right: 5, color: 'white', fontWeight: 'bold', fontSize: 11, right: 11 }}>
+                <View style={[styles.top]}>
+                    <View>
+                        <Image
+                            style={{ borderRadius: 10, marginBottom: 10, width: 77, height: 77, backgroundColor: 'gray' }}
+                        // source={{ uri: `${product.image}` }} 
+                        />
+                    </View>
+                    {/* <Text style={{ position: 'absolute', top: 2, right: 5, color: 'white', fontWeight: 'bold', fontSize: 11, right: 11 }}>
                             {product.rating.toFixed(1)}
                         </Text> */}
-                   
+
                     <View style={styles.bottom}>
                         <Text style={styles.name} numberOfLines={1}>{product?.name}</Text>
                         <Text style={styles.info}>{product?.info}</Text>
-                        <Text style={{color:'gray'}}>250.000đ</Text>
+                        <Text style={{ color: 'gray' }}>250.000đ</Text>
                         <View style={styles.priceContainer}>
+
                             <Text style={styles.price}>
-                                <Text style={{marginEnd:5}}>Còn</Text>
+                                <Text style={{ marginEnd: 5 }}>Còn</Text>
                                 {product?.price}
-                                <Text style={{marginStart:5}}>sp</Text>
+                                <Text style={{ marginStart: 5 }}>sp</Text>
                             </Text>
-                          
 
                             {/* <TouchableOpacity style={styles.btnAdd} onPress={() => addToCart(product)}>
                                 <Image source={require('../../../assets/images/btn_add.png')} />
                             </TouchableOpacity> */}
                         </View>
                     </View>
-                {/* </LinearGradient> */}
+                    {/* </LinearGradient> */}
                 </View>
             </TouchableOpacity>
         </View>
@@ -75,32 +75,32 @@ export default ItemCart;
 
 const styles = StyleSheet.create({
     // cloumn, row
-  vertical: {
-    flexDirection: 'column',
-  },
-  horizontal: {
-    flexDirection: 'row',
-  },
-  // flex
-  flex: {
-    flex: 1,
-  },
-    bg_container:{
+    vertical: {
+        flexDirection: 'column',
+    },
+    horizontal: {
+        flexDirection: 'row',
+    },
+    // flex
+    flex: {
+        flex: 1,
+    },
+    bg_container: {
         elevation: 2,
         shadowOffset: { width: 2, height: 2 },
         shadowOpacity: 0.1,
         shadowRadius: 10,
-        backgroundColor:'white',
-        marginBottom:1
+        backgroundColor: 'white',
+        marginBottom: 1
     },
     btnAdd: {
 
     },
     price: {
-        color: '#007537',
+        color: 'black',
         fontFamily: 'Poppins',
         fontSize: 15,
-        fontWeight: '600',
+        fontWeight: '300',
         fontStyle: 'normal',
         lineHeight: 20,
     },
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         marginTop: 6.3,
         justifyContent: 'space-between',
         paddingEnd: 12,
-        paddingBottom:10,
+        paddingBottom: 10,
     },
     info: {
         color: '#fff',
@@ -173,10 +173,10 @@ const styles = StyleSheet.create({
         height: 'auto',
         marginEnd: 10,
         borderRadius: 10,
-        marginTop:10,
-        marginStart:10,
-        position:'relative'
-        
+        marginTop: 10,
+        marginStart: 10,
+        position: 'relative'
+
         // display: 'flex',
         // flexDirection: 'column',
         // justifyContent: 'center',
@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
         position: 'relative',
         // alignItems: 'center',
         // margin: 12,
-        flexDirection:'row',
-        margin:5
+        flexDirection: 'row',
+        margin: 5
     },
 });

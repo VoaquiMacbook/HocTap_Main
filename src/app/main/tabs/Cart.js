@@ -4,12 +4,12 @@ import { AppContext } from '../AppContext';
 import AxiosInstance from '../../helper/AxiosInstance';
 import { useNavigation } from '@react-navigation/native';
 
-const Cart =  ({ route }) => {
+const Cart = ({ route }) => {
   const navigation = useNavigation();
   const { cart } = useContext(AppContext);
   const [products, setProducts] = useState([]);
 
-  
+
   useEffect(() => {
     const fetchData = async () => {
       // console.log(cart);
@@ -30,7 +30,7 @@ const Cart =  ({ route }) => {
     };
     fetchData();
   }, [cart]);
-  
+
 
   const handleQuantityChange = (type = 1, itemIndex) => {
     // type = 1: tăng số lượng
@@ -95,17 +95,17 @@ const Cart =  ({ route }) => {
 
 
   const payMent = async () => {
-   
+
     const totalPrice = products.reduce((acc, curr) => acc + (curr.item.price * curr.number), 0);
-    
+
     console.log('Total: ' + totalPrice)
     navigation.navigate('Payment', { totalPrice });
   }
-  
-  
-  
-  
-  
+
+
+
+
+
   return (
     <View style={styles.container}>
       {/* <View style={{
@@ -133,6 +133,15 @@ const Cart =  ({ route }) => {
               source={require('../../../../assets/images/ic_user.png')} />
           </TouchableOpacity>
         </View>
+      </View> */}
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.btnMenu} onPress={() => navigation.goBack()}>
+          <Image style={[styles.imgHeader, { width: 28, height: 28 }]} source={require('../../../../assets/images/chevron-left.png')} />
+        </TouchableOpacity>
+        <Text style={styles.txt_header}>GIỎI HÀNG</Text>
+        <TouchableOpacity style={styles.btnMenu} >
+          <Image style={styles.imgHeader} source={require('../../../../assets/images/delete.png')} />
+        </TouchableOpacity>
       </View>
       <FlatList
         style={{ marginTop: 30 }}
@@ -141,13 +150,12 @@ const Cart =  ({ route }) => {
         keyExtractor={(item, index) => index.toString()}
       />
       <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'space-between' }}>
-        <View>
           <View>
             <Text style={{
-              color: '#AEAEAE',
-              fontSize: 12,
-              fontWeight: 500
-            }}>Total Price</Text>
+              color: 'black',
+              fontSize: 14,
+              fontWeight: 250,
+            }}>Tạm tính</Text>
           </View>
 
           <View>
@@ -157,39 +165,82 @@ const Cart =  ({ route }) => {
               fontWeight: 600
             }}>
               <Text style={{
-                color: '#D17842',
+                color: 'black',
+                fontSize: 20,
+                fontWeight: 400
               }}>
-                $ </Text>
+                0 </Text>
               {total}</Text>
           </View>
-        </View>
-
-        <View>
-          <TouchableOpacity
-            onPress={payMent}
-            style={{ width: 200, height: 60, backgroundColor: '#D17842', borderRadius: 20 }}>
-            <Text style={{
-              paddingVertical: 20,
-              textAlign: 'center',
-              fontSize: 16,
-              fontWeight: 600,
-              color: 'white'
-            }}>
-              Pay
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View> */}
-       <Text>Cart</Text>
+      </View>
+      <View>
+        <TouchableOpacity
+          onPress={payMent}
+          style={{ width: '100%', height: 60, backgroundColor: '#007537', borderRadius: 12, marginTop:15}}>
+            <View style={{flexDirection:'row'}}>
+            <Text style={[styles.txt_pay, {paddingHorizontal:25}]}>
+            Tiến hành thanh toán
+          </Text>
+          <View style={styles.txt_pay2}>
+          <Image source={require('../../../../assets/images/chevron-right.png')}/>
+          </View>
+        
+            </View>
+        
+        </TouchableOpacity>
+      </View>
+      {/* <Text>Cart</Text> */}
     </View>
   );
 }
 export default Cart;
 const styles = StyleSheet.create({
+  txt_pay:{
+      paddingVertical: 20,
+      textAlign: 'center',
+      fontSize: 16,
+      fontWeight: 600,
+      color: 'white',
+      // backgroundColor:'red',
+  },
+  txt_pay2:{
+    paddingVertical: 18,
+    textAlign: 'center',
+    width:25,height:25,
+    paddingHorizontal:110,
+},
+  // cloumn, row
+  vertical: {
+    flexDirection: 'column',
+  },
+  horizontal: {
+    flexDirection: 'row',
+    marginEnd: 30,
+    marginStart: 30,
+    marginTop: 30,
+    marginBottom: 10,
+  },
+  horizontal_tamTinh: {
+    flexDirection: 'row',
+    marginTop: 30,
+    marginBottom: 10,
+  },
   container: {
     backgroundColor: 'white',
     width: '100%',
     height: '100%',
     padding: 30,
-  }
+  },
+  header: {
+    width: '100%',
+    height: 'auto',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  imgHeader: {
+    width: 24,
+    height: 24,
+    tintColor: 'black',
+  },
 });
