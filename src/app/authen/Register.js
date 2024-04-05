@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground, ScrollView, Button } from 'react-native'
 import React, { useState } from 'react'
 import AxiosInstance from '../helper/AxiosInstance';
 import LinearGradient from 'react-native-linear-gradient';
@@ -45,23 +45,46 @@ const Register = (props) => {
       }
     }
   };
+  const handleRegister = () => {
+    // Gửi dữ liệu đăng ký đến server
+    fetch('http://localhost:9999/users/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        // Xử lý phản hồi từ server nếu cần
+      })
+      .catch(error => {
+        console.error(error);
+        // Xử lý lỗi nếu có
+      });
+  };
 
   return (
     <ScrollView>
-    <ImageBackground
-      style={styles.bgContainer}
-      source={require('../../../assets/images/bg_register.png')}>
-      <View style={styles.container}>
-        <TouchableOpacity style={styles.btn_back} onPress={navigation.goBack} >
-          <Image style={{ width: 32, height: 32 }} source={require('../../../assets/images/btn_back.png')}></Image>
-        </TouchableOpacity>
-        <View style={styles.welcomeContainer}>
-          <Text style={styles.welcome}>Đăng ký</Text>
-        </View>
-        <View style={styles.loginContainer}>
-          <Text style={styles.login}>Tạo tài khoảng</Text>
-        </View>
-        <View style={[styles.inputContainer, { marginTop: 10, }]}>
+      <ImageBackground
+        style={styles.bgContainer}
+        source={require('../../../assets/images/bg_register.png')}>
+        <View style={styles.container}>
+          <TouchableOpacity style={styles.btn_back} onPress={navigation.goBack} >
+            <Image style={{ width: 32, height: 32 }} source={require('../../../assets/images/btn_back.png')}></Image>
+          </TouchableOpacity>
+          <View style={styles.welcomeContainer}>
+            <Text style={styles.welcome}>Đăng ký</Text>
+          </View>
+          <View style={styles.loginContainer}>
+            <Text style={styles.login}>Tạo tài khoảng</Text>
+          </View>
+          <View style={[styles.inputContainer, { marginTop: 10, }]}>
           <TextInput
             style={styles.input}
             placeholder="Họ tên"
@@ -70,7 +93,7 @@ const Register = (props) => {
             autoCorrect={true}
             keyboardType="default"
             value={name}
-            onChangeText={setName}
+            onChangeText={text => setName(text)}
           />
         </View>
         <View style={styles.inputContainer}>
@@ -82,7 +105,7 @@ const Register = (props) => {
             autoCorrect={false}
             keyboardType="email-address"
             value={email}
-            onChangeText={setEmail}
+            onChangeText={text => setEmail(text)}
           />
         </View>
         <View style={styles.inputContainer}>
@@ -97,7 +120,6 @@ const Register = (props) => {
             // onChangeText={setEmail}
           />
         </View>
-
         <View style={[styles.inputContainer, { marginTop: 16 }]}>
           <TextInput
             style={styles.input}
@@ -107,16 +129,13 @@ const Register = (props) => {
             autoCorrect={false}
             secureTextEntry={secureTextEntry}
             value={password}
-            onChangeText={setPassword}
-          />
+           onChangeText={text => setPassword(text)}/>
           <TouchableOpacity
             style={styles.eyeImg}
             onPress={showPassword}>
             <Image
-              source={require('../../../assets/images/ic_eye.png')}
-            />
+              source={require('../../../assets/images/ic_eye.png')}/>
           </TouchableOpacity>
-
         </View>
         <View style={[styles.inputContainer, { marginTop: 16, marginBottom:16 }]}>
           <TextInput
@@ -136,55 +155,53 @@ const Register = (props) => {
               source={require('../../../assets/images/ic_eye.png')}
             />
           </TouchableOpacity>
+          </View>
 
-        </View>
-        <Text style={styles.signIn}>
-          Để đăng ký tài khoản, bạn đồng ý{" "}
-          <Text style={styles.termsAndPolicy}>
-            <Text style={[styles.linkText]}>Terms &</Text>{"\n"}Conditions
-          </Text>{" "}
-          and{" "}
-          <Text style={styles.termsAndPolicy}>
-            <Text style={[styles.linkText]}>Privacy Policy</Text>
+          <Text style={styles.signIn}>
+            Để đăng ký tài khoản, bạn đồng ý{" "}
+            <Text style={styles.termsAndPolicy}>
+              <Text style={[styles.linkText]}>Terms &</Text>{"\n"}Conditions
+            </Text>{" "}
+            and{" "}
+            <Text style={styles.termsAndPolicy}>
+              <Text style={[styles.linkText]}>Privacy Policy</Text>
+            </Text>
           </Text>
-        </Text>
-        <TouchableOpacity
-          style={[styles.buttonContainer, { marginTop: 21 }]}
-          onPress={register} >
-          <LinearGradient
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            colors={['#007537', '#36C077']}
-            style={[styles.buttonContainer]}>
-            <Text style={styles.buttonText}>Đăng ký</Text>
-          </LinearGradient>
-        </TouchableOpacity>
-        <View style={[styles.horizontal, { marginTop: 15 }]}>
-          <Text style={styles.line}></Text>
-          <Text style={styles.txt_line}>Hoặc</Text>
-          <Text style={styles.line}></Text>
-        </View>
-        <View style={[styles.horizontal, { marginTop: 20 }]}>
-          <TouchableOpacity>
-            <Image style={styles.ic_gg} source={require('../../../assets/images/ic_gg.png')}></Image>
+          <TouchableOpacity
+            style={[styles.buttonContainer, { marginTop: 21 }]}
+            onPress={handleRegister} >
+            <LinearGradient
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 1 }}
+              colors={['#007537', '#36C077']}
+              style={[styles.buttonContainer]}>
+              <Text style={styles.buttonText}>Đăng ký</Text>
+            </LinearGradient>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Image style={{ width: 32, height: 32 }} source={require('../../../assets/images/ic_fb.png')}></Image>
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.sigInContainer}>
-          <Text style={styles.signIn}>Tôi đã có tài khoảng </Text>
-          {/* <TouchableOpacity onPress={navigation.goBack}>
+          <View style={[styles.horizontal, { marginTop: 15 }]}>
+            <Text style={styles.line}></Text>
+            <Text style={styles.txt_line}>Hoặc</Text>
+            <Text style={styles.line}></Text>
+          </View>
+          <View style={[styles.horizontal, { marginTop: 20 }]}>
+            <TouchableOpacity>
+              <Image style={styles.ic_gg} source={require('../../../assets/images/ic_gg.png')}></Image>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Image style={{ width: 32, height: 32 }} source={require('../../../assets/images/ic_fb.png')}></Image>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.sigInContainer}>
+            <Text style={styles.signIn}>Tôi đã có tài khoảng </Text>
+            {/* <TouchableOpacity onPress={navigation.goBack}>
           <Text style={styles.signInText}>Sign in</Text>
         </TouchableOpacity> */}
-          <TouchableOpacity onPress={navigation.goBack}>
-            <Text style={styles.signInText}> Đăng nhập</Text>
-          </TouchableOpacity>
-
-        </View>
-      </View >
-    </ImageBackground>
+            <TouchableOpacity onPress={navigation.goBack}>
+              <Text style={styles.signInText}> Đăng nhập</Text>
+            </TouchableOpacity>
+          </View>
+        </View >
+      </ImageBackground>
     </ScrollView>
   )
 }
@@ -194,7 +211,7 @@ export default Register
 const styles = StyleSheet.create({
   termsAndPolicy: {
     color: 'green', // Màu xanh lá cho phần "Terms & Conditions" và "Privacy Policy"
-    textDecorationLine: 'underline', 
+    textDecorationLine: 'underline',
   },
   linkText: {
     color: 'green', // Màu xanh lá cho phần "Terms" trong "Terms & Conditions"
@@ -334,7 +351,7 @@ const styles = StyleSheet.create({
   },
   welcomeContainer: {
     // marginTop: 80,
-    marginTop:'40%',
+    marginTop: '40%',
   },
   welcome: {
     color: 'black',

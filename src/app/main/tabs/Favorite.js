@@ -71,11 +71,9 @@ export const Favorite = () => {
           <StatusBar backgroundColor="transparent" translucent />
           <Image source={{ uri: `${item?.item.image}` }} style={styles.image} />
           <View style={styles.header}>
-
             <TouchableOpacity onPress={() => unFavorite(item?.item._id)} style={styles.btnMenu}>
               <Image style={styles.imgHeader} source={require('../../../../assets/images/ic_favorite_red.png')} />
             </TouchableOpacity>
-
           </View>
           <View style={styles.containertong2}>
             <View style={styles.containerProduct}>
@@ -123,7 +121,7 @@ export const Favorite = () => {
   }
   return (
     <View style={styles.container}>
-      <View style={{
+      {/* <View style={{
         flexDirection: 'row',
         justifyContent: 'space-between',
         marginTop: 30
@@ -148,7 +146,8 @@ export const Favorite = () => {
               source={require('../../../../assets/images/ic_user.png')} />
           </TouchableOpacity>
         </View>
-      </View>
+      </View> */}
+      
       <FlatList
         style={{ marginTop: 30 }}
         data={products}

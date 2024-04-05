@@ -68,6 +68,29 @@ const Login = (props) => {
         }
     };
 
+    const handleLogin = () => {
+        // Gửi dữ liệu đăng ký đến server
+        fetch('http://localhost:9999/users/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log(data);
+            // Xử lý phản hồi từ server nếu cần
+          })
+          .catch(error => {
+            console.error(error);
+            // Xử lý lỗi nếu có
+          });
+      };
+
 
     const register = () => {
         navigation.navigate('Register');
@@ -109,7 +132,7 @@ const Login = (props) => {
                         autoCorrect={false}
                         keyboardType="email-address"
                         value={email}
-                        onChangeText={changeEmail}
+                        onChangeText={text => setEmail(text)}
                     />
                     {bugEmail !== '' &&
                         <Text style={styles.textBug}>
@@ -125,7 +148,7 @@ const Login = (props) => {
                         autoCorrect={false}
                         secureTextEntry={secureTextEntry}
                         value={password}
-                        onChangeText={changePassword}
+                        onChangeText={text => setPassword(text)}
                     />
                     <TouchableOpacity
                         style={styles.eyeImg}

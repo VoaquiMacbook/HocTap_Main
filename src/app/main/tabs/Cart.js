@@ -50,26 +50,29 @@ const Cart = ({ route }) => {
 
   const renderItemCart = ({ item, index }) => {
     return (
-      <View style={{ flexDirection: 'row', marginTop: 16, width: '100%', height: 154, backgroundColor: '#262B33', borderRadius: 23, padding: 10 }}>
+      <View style={{ flexDirection: 'row', marginTop: 16, width: '100%', height: 77, backgroundColor: '#fff', borderRadius: 23, padding: 10 }}>
         <View>
           <Image
-            style={{ width: 135, height: 135, borderRadius: 23 }}
+            style={{ width: 77, height: 77, borderRadius: 8, backgroundColor:'gray' }}
             source={{ uri: `${item?.item.image}` }} />
         </View>
 
         <View style={{ marginLeft: 10 }}>
-          <Text numberOfLines={1} style={{ width: '60%', color: 'white', fontSize: 15, fontWeight: '400' }}>{item?.item.name}</Text>
-          <Text style={{ color: '#AEAEAE', fontSize: 9 }}>Content</Text>
+          <View style={{flexDirection:'row'}}>
+          <Text numberOfLines={1} style={{ width: '60%', color: 'black', fontSize: 12, fontWeight: '400' }}>{item?.item.name} |</Text>
+          <Text style={{ color: '#AEAEAE', fontSize: 9 }}>Ưa bóng</Text>
+          </View>
+        
           <Text style={{
             fontSize: 20,
             marginTop: 16,
             marginBottom: 15,
-            fontWeight: 'bold',
-            color: 'white'
+            fontWeight: '400',
+            color: 'green'
           }}>
-            <Text style={{
-              color: '#D17842',
-            }}>$</Text> {item?.item.price}
+            {item?.item.price}.000đ<Text style={{
+              color: 'green',
+            }}></Text>
           </Text>
           <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
