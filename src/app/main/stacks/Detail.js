@@ -91,7 +91,8 @@ const Detail = ({ navigation, route }, props) => {
           <Image style={[styles.imgHeader, { width: 28, height: 28 }]} source={require('../../../../assets/images/chevron-left.png')} />
         </TouchableOpacity>
         <Text style={styles.txt_header}>Spider Plant</Text>
-        <TouchableOpacity style={styles.btnMenu} onPress={addFavorite}>
+        <TouchableOpacity style={styles.btnMenu}  onPress={() => navigation.navigate('Cart')}> 
+        {/* onPress={addFavorite} */}
           <Image style={styles.imgHeader} source={require('../../../../assets/images/shopping-cart.png')} />
         </TouchableOpacity>
       </View>
