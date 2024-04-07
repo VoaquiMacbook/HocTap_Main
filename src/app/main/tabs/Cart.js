@@ -65,8 +65,8 @@ const Cart = ({ route }) => {
         
           <Text style={{
             fontSize: 20,
-            marginTop: 16,
-            marginBottom: 15,
+            marginTop: 5,
+            marginBottom: 7,
             fontWeight: '400',
             color: 'green'
           }}>
@@ -77,15 +77,16 @@ const Cart = ({ route }) => {
           <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
               onPress={() => handleQuantityChange(-1, index)}
-              style={{ width: 30, height: 30, backgroundColor: '#D17842', alignItems: 'center', borderRadius: 5 }}>
-              <Text style={{ paddingVertical: 3, fontSize: 18, color: 'white' }}>-</Text>
+              style={{ width: 21, height: 21, alignItems: 'center', borderRadius: 5,borderWidth:1,borderColor:'black'  }}>
+              <Text style={{  paddingVertical: 2, fontSize: 13, color: 'black' }}>-</Text>
             </TouchableOpacity>
-            <Text style={{ width: 50, height: 30, borderColor: '#D17842', borderWidth: 1, borderRadius: 5, textAlign: 'center', marginHorizontal: 15, paddingVertical: 5, color: 'white' }}>{item.number}</Text>
+            <Text style={{ width: 30, height: 30,  textAlign: 'center',  paddingVertical: 5, color: 'black' }}>{item.number}</Text>
             <TouchableOpacity
               onPress={() => handleQuantityChange(1, index)}
-              style={{ width: 30, height: 30, backgroundColor: '#D17842', alignItems: 'center', borderRadius: 5 }}>
-              <Text style={{ paddingVertical: 3, fontSize: 18, color: 'white' }}>+</Text>
+              style={{ width: 21, height: 21, alignItems: 'center', borderRadius: 5, borderWidth:1,borderColor:'black' }}>
+              <Text style={{ paddingVertical: 3, fontSize: 12, color: 'black' }}>+</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={{borderBottomColor:'black', borderBottomWidth:1,marginStart:20, marginVertical:5}}><Text>Xóa</Text></TouchableOpacity>
           </View>
         </View>
       </View>
@@ -163,17 +164,17 @@ const Cart = ({ route }) => {
 
           <View>
             <Text style={{
-              color: 'white',
+              color: 'black',
               fontSize: 20,
-              fontWeight: 600
+              fontWeight: 600,
             }}>
               <Text style={{
                 color: 'black',
                 fontSize: 20,
                 fontWeight: 400
               }}>
-                0 </Text>
-              {total}</Text>
+                </Text>
+              {total}.000</Text>
           </View>
       </View>
       <View>
