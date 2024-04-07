@@ -8,7 +8,11 @@ const Cart = ({ route }) => {
   const navigation = useNavigation();
   const { cart } = useContext(AppContext);
   const [products, setProducts] = useState([]);
-
+  const removeItemFromCart = (index) => {
+    const updatedProducts = [...products]; // Tạo một bản sao của mảng sản phẩm để cập nhật state
+    updatedProducts.splice(index, 1); // Xóa mục tại vị trí index khỏi mảng
+    setProducts(updatedProducts); // Cập nhật lại state với mảng đã cập nhật
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,16 +57,16 @@ const Cart = ({ route }) => {
       <View style={{ flexDirection: 'row', marginTop: 16, width: '100%', height: 77, backgroundColor: '#fff', borderRadius: 23, padding: 10 }}>
         <View>
           <Image
-            style={{ width: 77, height: 77, borderRadius: 8, backgroundColor:'gray' }}
+            style={{ width: 77, height: 77, borderRadius: 8, backgroundColor: 'gray' }}
             source={{ uri: `${item?.item.image}` }} />
         </View>
 
         <View style={{ marginLeft: 10 }}>
-          <View style={{flexDirection:'row'}}>
-          <Text numberOfLines={1} style={{ width: '60%', color: 'black', fontSize: 12, fontWeight: '400' }}>{item?.item.name} |</Text>
-          <Text style={{ color: '#AEAEAE', fontSize: 9 }}>Ưa bóng</Text>
+          <View style={{ flexDirection: 'row' }}>
+            <Text numberOfLines={1} style={{ width: '60%', color: 'black', fontSize: 12, fontWeight: '400' }}>{item?.item.name} |</Text>
+            <Text style={{ color: '#AEAEAE', fontSize: 9 }}>Ưa bóng</Text>
           </View>
-        
+
           <Text style={{
             fontSize: 20,
             marginTop: 5,
@@ -77,16 +81,18 @@ const Cart = ({ route }) => {
           <View style={{ flexDirection: 'row' }}>
             <TouchableOpacity
               onPress={() => handleQuantityChange(-1, index)}
-              style={{ width: 21, height: 21, alignItems: 'center', borderRadius: 5,borderWidth:1,borderColor:'black'  }}>
-              <Text style={{  paddingVertical: 2, fontSize: 13, color: 'black' }}>-</Text>
+              style={{ width: 21, height: 21, alignItems: 'center', borderRadius: 5, borderWidth: 1, borderColor: 'black' }}>
+              <Text style={{ paddingVertical: 2, fontSize: 13, color: 'black' }}>-</Text>
             </TouchableOpacity>
-            <Text style={{ width: 30, height: 30,  textAlign: 'center',  paddingVertical: 5, color: 'black' }}>{item.number}</Text>
+            <Text style={{ width: 30, height: 30, textAlign: 'center', paddingVertical: 5, color: 'black' }}>{item.number}</Text>
             <TouchableOpacity
               onPress={() => handleQuantityChange(1, index)}
-              style={{ width: 21, height: 21, alignItems: 'center', borderRadius: 5, borderWidth:1,borderColor:'black' }}>
+              style={{ width: 21, height: 21, alignItems: 'center', borderRadius: 5, borderWidth: 1, borderColor: 'black' }}>
               <Text style={{ paddingVertical: 3, fontSize: 12, color: 'black' }}>+</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={{borderBottomColor:'black', borderBottomWidth:1,marginStart:20, marginVertical:5}}><Text>Xóa</Text></TouchableOpacity>
+            <TouchableOpacity onPress={() => removeItemFromCart(index)} style={{ borderBottomColor: 'black', borderBottomWidth: 1, marginStart: 20, marginVertical: 5 }}>
+              <Text>Xóa</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -154,43 +160,43 @@ const Cart = ({ route }) => {
         keyExtractor={(item, index) => index.toString()}
       />
       <View style={{ marginTop: 20, flexDirection: 'row', justifyContent: 'space-between' }}>
-          <View>
-            <Text style={{
-              color: 'black',
-              fontSize: 14,
-              fontWeight: 250,
-            }}>Tạm tính</Text>
-          </View>
+        <View>
+          <Text style={{
+            color: 'black',
+            fontSize: 14,
+            fontWeight: 250,
+          }}>Tạm tính</Text>
+        </View>
 
-          <View>
+        <View>
+          <Text style={{
+            color: 'black',
+            fontSize: 20,
+            fontWeight: 600,
+          }}>
             <Text style={{
               color: 'black',
               fontSize: 20,
-              fontWeight: 600,
+              fontWeight: 400
             }}>
-              <Text style={{
-                color: 'black',
-                fontSize: 20,
-                fontWeight: 400
-              }}>
-                </Text>
-              {total}.000</Text>
-          </View>
+            </Text>
+            {total}.000</Text>
+        </View>
       </View>
       <View>
         <TouchableOpacity
           onPress={payMent}
-          style={{ width: '100%', height: 60, backgroundColor: '#007537', borderRadius: 12, marginTop:15}}>
-            <View style={{flexDirection:'row'}}>
-            <Text style={[styles.txt_pay, {paddingHorizontal:25}]}>
-            Tiến hành thanh toán
-          </Text>
-          <View style={styles.txt_pay2}>
-          <Image source={require('../../../../assets/images/chevron-right.png')}/>
-          </View>
-        
+          style={{ width: '100%', height: 60, backgroundColor: '#007537', borderRadius: 12, marginTop: 15 }}>
+          <View style={{ flexDirection: 'row' }}>
+            <Text style={[styles.txt_pay, { paddingHorizontal: 25 }]}>
+              Tiến hành thanh toán
+            </Text>
+            <View style={styles.txt_pay2}>
+              <Image source={require('../../../../assets/images/chevron-right.png')} />
             </View>
-        
+
+          </View>
+
         </TouchableOpacity>
       </View>
       {/* <Text>Cart</Text> */}
@@ -199,20 +205,20 @@ const Cart = ({ route }) => {
 }
 export default Cart;
 const styles = StyleSheet.create({
-  txt_pay:{
-      paddingVertical: 20,
-      textAlign: 'center',
-      fontSize: 16,
-      fontWeight: 600,
-      color: 'white',
-      // backgroundColor:'red',
+  txt_pay: {
+    paddingVertical: 20,
+    textAlign: 'center',
+    fontSize: 16,
+    fontWeight: 600,
+    color: 'white',
+    // backgroundColor:'red',
   },
-  txt_pay2:{
+  txt_pay2: {
     paddingVertical: 18,
     textAlign: 'center',
-    width:25,height:25,
-    paddingHorizontal:110,
-},
+    width: 25, height: 25,
+    paddingHorizontal: 110,
+  },
   // cloumn, row
   vertical: {
     flexDirection: 'column',
