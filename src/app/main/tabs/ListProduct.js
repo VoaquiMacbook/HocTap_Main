@@ -137,9 +137,6 @@ const Home = (props) => {
           ))}
         </ScrollView>
       </View>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}>
         <View style={styles.listCoffee}>
           <FlatList
             numColumns={2}
@@ -173,7 +170,6 @@ const Home = (props) => {
             keyExtractor={(item, index) => index.toString()}
           />
         </View>
-      </ScrollView>
     </View>
   )
 }
@@ -223,7 +219,7 @@ const styles = StyleSheet.create({
   },
   textCoffeeBean: {
     marginTop: 23.32,
-    color: '#fff',
+    color: 'white',
     fontFamily: 'Poppins',
     fontSize: 16,
     fontWeight: '600',
